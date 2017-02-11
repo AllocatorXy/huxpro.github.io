@@ -45,7 +45,7 @@ tags:
 #### 伪类与 CSS 类
 ```
 伪类可以与 CSS 类配合使用：
-a.red : visited {color: #FF0000}
+a.red:visited {color: #FF0000}
 <a class="red" href="css_syntax.asp">CSS Syntax</a>
 ```
 

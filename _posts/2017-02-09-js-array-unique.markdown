@@ -45,7 +45,7 @@ Array.prototype.uniq = function() {
 - 创建一个结果数组；
 - 因为相同元素相邻，只需要将原数组每个元素与结果数组中上一个元素比较；
 - 将不同于上一个元素的元素放入结果数组；
-```
+```javascript
 Array.prototype.uniq = function() {
     this.sort();
     let res = [ this[0] ];
@@ -63,7 +63,7 @@ Array.prototype.uniq = function() {
 - 创建一个结果数组和一个json对象；
 - 遍历原数组，每次查找其在json中是否有值；
 - 将不存在的放入结果数组，并在json中以该元素创建一个属性并随意赋值；
-```
+```javascript
 Array.prototype.uniq = function() {
     let res = [];
     let json = {};
