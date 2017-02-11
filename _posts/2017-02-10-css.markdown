@@ -165,6 +165,7 @@ text-overflow:ellipsis; //省略号
     float:left
           right
           none
+
 #### 特性
 - 合并到一行
 - 脱离文档流
