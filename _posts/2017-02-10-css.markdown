@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "我的CSS学习笔记"
-subtitle:   "用于日后自己翻阅"
+subtitle:   "我自己的CSS使用文档"
 date:       2017-02-10 12:00:00
 author:     "AllocatorXy"
 header-img: "img/post-bg-re-vs-ng2.jpg"
