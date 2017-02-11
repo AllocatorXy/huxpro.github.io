@@ -4,7 +4,7 @@ SEOTitle: 惜缘的博客 | AllocatorXy
 header-img: img/home-bg.jpg
 email: AllocatorXy@foxmail.com
 description: "blabla"
-# keyword: "黄玄, Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品, 肖玉, Lynn, 肖玉的男朋友"
+# keyword: ""                           #"key1, key2"
 url: "https://AllocatorXy.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -48,7 +48,7 @@ kramdown:
 
 
 # Disqus settings
-#disqus_username: _your_disqus_short_name_
+disqus_username: _your_disqus_short_name_
 
 # Duoshuo settings
 # duoshuo_username: huxblog
