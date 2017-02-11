@@ -160,7 +160,7 @@ tags:
     </form>
 ```
 
-###input
+### input
 
 - type
     + text        //文本框
@@ -176,7 +176,7 @@ tags:
 - lable
     + for="id"
 
-###checkbox 多选
+### checkbox 多选
 
 - name
 - value
