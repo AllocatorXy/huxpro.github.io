@@ -80,32 +80,26 @@ a.red : visited {color: #FF0000}
 
 ### background
     background
-    - color
-    - image
-    - repeat
-    - no-repeat
-    - repeat-x
-    - repeat-y
-    - position: left right center top bottom
+              -color
+              -image
+              -repeat
+              -no-repeat
+              -repeat-x
+              -repeat-y
+              -position: left right center top bottom
+
 **当给一个值的时候 第二个值默认为center**
 **缩写**: background:#000 url no-repeat center;
 
 ### padding 内边距(内填充)
-
 **简单来说，padding是在盒子内部加填充物，且会撑大盒子。**
-
-    padding
-        -top
-        -left
-        -right
-        -bottom
+- 块元素支持四个方向的padding
+- 行内元素只支持左右的padding **不支持上下**
 - 简写顺序
     + 四个值的时候  上  右  下  左 (从上开始顺时针)
     + 三个值的时候  上   左右   下 
     + 两个值的时候  上下      左右
     + 一个值的时候  上  右  下  左       
-- 块元素支持四个方向的padding
-- 行内元素只支持左右的padding **不支持上下**
 
 ### margin 外边距
 - 块元素支持四个方向的margin
