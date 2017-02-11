@@ -58,6 +58,7 @@ tags:
 
 ### 不换行的空标签
     <span></span>
+
 ### 换行的空标签
     <div></div>
 
@@ -81,6 +82,7 @@ tags:
 - img能被所有包
 
 ### 列表
+
 #### 无序列表
 ```html
     <ul>               /*unordered lists*/
@@ -159,6 +161,7 @@ tags:
 ```
 
 ###input
+
 - type
     + text        //文本框
     + password    //密码
@@ -174,6 +177,7 @@ tags:
     + for="id"
 
 ###checkbox 多选
+
 - name
 - value
 - id
