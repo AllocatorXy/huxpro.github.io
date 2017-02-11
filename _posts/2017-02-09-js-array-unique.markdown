@@ -4,7 +4,7 @@ title:      "js数组去除重复元素"
 subtitle:   "js数组去重的三种常用方式"
 date:       2017-02-09 21:00:00
 author:     "AllocatorXy"
-header-img: "img/post-bg-re-vs-ng2.jpg"
+header-img: "img/js-bg.png"
 header-mask: 0.3
 tags:
     - 前端开发
@@ -13,6 +13,7 @@ tags:
 
 ### js数组去重
 *去除数组中重复的元素，用js实现一般来说有三种较常用的方式。*
+
 ##### function 1
 *时间复杂度O(n^2)*
 - 创建一个结果数组；
@@ -37,6 +38,7 @@ Array.prototype.uniq = function() {
     return res;
 };
 ```
+
 ##### function 2
 *这种方法效率会比function 1 高，时间复杂度为O(n)，但会影响原数组顺序*
 - 原数组排序，使相同元素处于相邻位置；
@@ -55,6 +57,7 @@ Array.prototype.uniq = function() {
     return res;
 };
 ```
+
 ##### function 3
 *这种方法时间复杂度与第二种相同，但因为少了一次快速排序，效率最高，且不影响数组顺序*
 - 创建一个结果数组和一个json对象；
@@ -73,3 +76,4 @@ Array.prototype.uniq = function() {
     return res;
 };
 ```
+
