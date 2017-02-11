@@ -38,8 +38,8 @@ tags:
     + a:active{ }     //激活状态
 
 > 在 CSS 定义中，a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的。
-  在 CSS 定义中，a:active 必须被置于 a:hover 之后，才是有效的。
-**顺序为    link > visited > hover > active  (lvha)**
+  在 CSS 定义中，a:active 必须被置于 a:hover 之后，才是有效的。<br />
+**顺序为link > visited > hover > active  (lvha)** <br />
 **其中hover 和 active  可以给其他标签加**
 
 #### 伪类与 CSS 类
@@ -48,6 +48,7 @@ tags:
 a.red : visited {color: #FF0000}
 <a class="red" href="css_syntax.asp">CSS Syntax</a>
 ```
+
 #### CSS:after 选择器
 - :after 选择器在被选元素的内容后面插入内容。
 - 请使用 content 属性来指定要插入的内容。
@@ -189,6 +190,7 @@ text-overflow:ellipsis; //省略号
 - 同级元素最好都浮动
 
 ### 定位position
+
 | position: |     定位参照      | 脱离文档流 | 行内变块 |自由宽度的块元素变形|
 | -------:  |     :------:      |    :---:   |   :---:  |       :---:        |
 | relative; |       自身        |      ×     |     ×    |         ×          |
@@ -196,7 +198,7 @@ text-overflow:ellipsis; //省略号
 | fixed;    |     可视区域      |      √     |     √    |         √          |
 
 >优先级：普通元素<浮动<定位，后写的标签层级比先写的高,positon可用于提升层级
-                         
+                      
 ### z-index
 - 只有定位的元素才能使用
 - z-index：最大2^32
