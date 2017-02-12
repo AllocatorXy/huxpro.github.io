@@ -4,8 +4,8 @@ title:      "jq动画使用"
 subtitle:   "animate使用时的注意事项"
 date:       2017-02-12 20:24:00
 author:     "AllocatorXy"
-header-img: "img/post-bg-js-module.jpg"
 comments: true
+header-img: "img/post-bg-js-module.jpg"
 header-mask: 0.3
 tags:
     - 前端开发
