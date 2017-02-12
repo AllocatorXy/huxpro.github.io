@@ -6,7 +6,6 @@ date:       2017-02-12 20:24:00
 author:     "AllocatorXy"
 header-img: "img/post-bg-js-module.jpg"
 header-mask: 0.3
-catalog:    true
 tags:
     - 前端开发
     - JavaScript
@@ -14,7 +13,7 @@ tags:
 ---
 
 ### jQuery animate
-> jQuery中，fadein/fadetoggle等内部实现也是animate;
+> jQuery中，fadein/fadetoggle等内部实现也是animate;<br />
 > animate实际就是js实现定时器动画;
 
 #### 格式
