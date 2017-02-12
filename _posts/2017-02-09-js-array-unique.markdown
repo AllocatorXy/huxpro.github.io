@@ -4,6 +4,7 @@ title:      "js数组去除重复元素"
 subtitle:   "js数组去重的三种常用方式"
 date:       2017-02-09 21:00:00
 author:     "AllocatorXy"
+comments: true
 header-img: "img/js-bg.png"
 header-mask: 0.3
 tags:
