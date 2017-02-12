@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "我的CSS笔记"
+title:      "我的JS笔记"
 subtitle:   "我自己的js文档"
 date:       2017-02-10 12:00:00
 author:     "AllocatorXy"
@@ -20,7 +20,7 @@ tags:
 - string不能直接换行，换行需要搞事情：
     + 加号拼接
     + 每次换行行末加\
-    + ES6 syntax: ` `` ` <-用这个包起来
+    + ES6 模板字符串
 
 #### 模板字符串
 ```javascript
