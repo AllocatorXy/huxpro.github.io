@@ -2,7 +2,7 @@
 layout:     post
 title:      "我的JS笔记"
 subtitle:   "我自己的js文档"
-date:       2017-02-10 12:00:00
+date:       2017-02-12 15:00:00
 author:     "AllocatorXy"
 header-img: "img/js-logo.png"
 header-mask: 0.3
@@ -108,16 +108,20 @@ var n = '2'*1;    // result: 2
 >Global
 **当在函数体之外，var与let没有区别**
 
+```javascript
     let a = 1;  // globally scoped
     var b = 1;  // globally scoped
+```
 
 >Function
 **当在函数体之外，var与let没有区别**
 
+```javascript
     function (){
         let a = 1;  // function block scoped
         var b = 1;  // function block scoped
     }
+```
 
 >Block
 **let只在最内层有效，而var在整个函数可见**
