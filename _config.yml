@@ -4,7 +4,7 @@ SEOTitle: 惜缘 | AllocatorXy
 header-img: img/post-bg-universe.jpg
 email: AllocatorXy@foxmail.com
 description: "AllocatorXy Blog"
-# keyword: ""                           #"key1, key2"
+keyword: "惜缘, AllocatorXy"                           #"key1, key2"
 url: "https://AllocatorXy.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -48,7 +48,7 @@ kramdown:
 
 
 # Disqus settings
-disqus_username: AllocatorXy
+disqus_username: disqus_AllocatorXy
 
 # Duoshuo settings
 # duoshuo_username: huxblog
