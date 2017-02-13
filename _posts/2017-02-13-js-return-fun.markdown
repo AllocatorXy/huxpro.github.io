@@ -13,7 +13,7 @@ tags:
 
 ### js返回值
 
->偶然发现，js在return时，返回的是函数的情况，这个函数并**不会被执行**，而是直接返回它本身。
+偶然发现，js在return时，返回的是函数的情况，这个函数并**不会被执行**，而是直接返回它本身。
 
 ```javascript
 function a() {
@@ -30,10 +30,10 @@ let type = typeof res;
 // type: function
 ```
 
->如果我非要return一个函数并且让他执行怎么办？
->在上面那个栗子中，可以看出res只是执行了一次外部函数，内层return的函数并没有执行
->我们知道了返回值是可以返回函数类型的，而以上栗子中，res接收了a()的返回值
->↓于是这样就可以执行↓
+如果我**非要**return一个函数并且让他**执行**怎么办？
+在上面栗子中，可以看出res只是执行了一次外部函数，内层return的函数并没有执行;
+我们知道了返回值是可以返回**函数类型**的，而以上栗子中，res接收了a()的返回值
+↓于是这样就可以执行↓
 
 ```javascript
 function a() {
@@ -44,14 +44,14 @@ function a() {
     };
 }
 let res = a(); 
-res();
+res();                  // 运行赋给res的a函数返回的函数
 let type = typeof res;
 // console: msg0 msg1
 // res: function () {console.log('msg1'); return 'done';}
 // type: function
 ```
 
->或者在给res赋值的时候直接把返回值运行
+或者在给res赋值的时候**直接**把返回的函数运行
 
 ```javascript
 function a() {
