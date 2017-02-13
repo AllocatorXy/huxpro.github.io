@@ -4,7 +4,7 @@ title:      "js函数的返回值"
 subtitle:   "返回变量，对象和返回函数都一样么？"
 date:       2017-02-13 11:06:00
 author:     "AllocatorXy"
-header-img: "img/js-bg.png"
+header-img: "img/post-bg-js-module.jpg"
 header-mask: 0.3
 tags:
     - 前端开发
