@@ -40,9 +40,10 @@ let c = `${a}and${b}`; // string1andstring2
     7. global       // es6顶层对象
 
 #### 数据真假(true/false)
-
-    false: false, 0, '', null, undefined, NaN
-    true: true, 非空对象, 非0数字, 非空字符串
+```javascript
+    false: false, 0, '', null, undefined, NaN;
+    true: true, 非空对象, 非0数字, 非空字符串;
+```
 
 #### 检测数据类型
 - isNaN() -> is Not a Number?true:false
@@ -54,7 +55,6 @@ let c = `${a}and${b}`; // string1andstring2
 ##### 显式转换
 
 ###### 转换函数
-
 *转换函数是将字符串中第一个有效数字转换为数字*
 
 ```javascript
@@ -71,7 +71,6 @@ parseFloat('0100')      // result: 100
 ```
 
 ###### 强制类型转换
-
 ```javascript
 Boolean(value)      // '',0,null,undefined -> false
 Number(value)       // Number与转换函数不同在于，非数字将直接转换为NaN
@@ -94,7 +93,6 @@ var n = '2'*1;    // result: 2
 #### 循环
 
 ##### break
-
 ```javascript
 // 停止执行 result:0 1 2
 for (let i = 0; i <= 5; i++) {
@@ -106,7 +104,6 @@ for (let i = 0; i <= 5; i++) {
 ```
 
 ##### continue
-
 ```javascript
 // 跳过本次执行 result:0 1 2 4 5
 for (let i = 0; i <= 5; i++) {
