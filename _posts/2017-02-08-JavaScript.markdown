@@ -39,11 +39,21 @@ let c = `${a}and${b}`; // string1andstring2
     6. object       // 可分为元素,array,null
     7. global       // es6顶层对象
 
-### 类型转换
+#### 数据真假(true/false)
 
-#### 显式转换
+    false: false, 0, '', null, undefined, NaN
+    true: true, 非空对象, 非0数字, 非空字符串
 
-##### 转换函数
+#### 检测数据类型
+- isNaN() -> is Not a Number?true:false
+    + NaN == NaN -> false
+- typeof sth -> type of sth
+
+#### 类型转换
+
+##### 显式转换
+
+###### 转换函数
 
 *转换函数是将字符串中第一个有效数字转换为数字*
 
@@ -60,7 +70,7 @@ parseFloat('2.2.5')     // result: 2.2
 parseFloat('0100')      // result: 100
 ```
 
-##### 强制类型转换
+###### 强制类型转换
 
 ```javascript
 Boolean(value)      // '',0,null,undefined -> false
@@ -68,7 +78,7 @@ Number(value)       // Number与转换函数不同在于，非数字将直接转
 String(value)
 ```
 
-#### 隐式转换
+##### 隐式转换
 **因为js是弱类型语言，可以直接搞事情**
 
 ```javascript
@@ -78,12 +88,6 @@ var y = '2'+2;    // result: '22' *加号就当连字符处理了*
 var z = 2+'';     // result: '2'
 var n = '2'*1;    // result: 2
 ```
-
-### 检测数据类型
-- isNaN() -> is Not a Number?true:false
-    + NaN == NaN -> false
-- typeof sth -> type of sth
-
 
 ### 流程控制语句
 
@@ -102,6 +106,7 @@ for (let i = 0; i <= 5; i++) {
 ```
 
 ##### continue
+
 ```javascript
 // 跳过本次执行 result:0 1 2 4 5
 for (let i = 0; i <= 5; i++) {

@@ -2,7 +2,7 @@
 layout:     post
 title:      "js return一个函数会得到什么?"
 subtitle:   "执行? sting? function?"
-date:       2017-02-13 11:06:00
+date:       2017-02-13 13:06:00
 author:     "AllocatorXy"
 header-img: "img/post-bg-js-module.jpg"
 header-mask: 0.3
@@ -54,7 +54,7 @@ alert(typeof res); // function
 // res: function () {console.log('msg1');}
 ```
 
-验证一下猜想，果真如此，返回值不管是**数字**还是**函数**，都没有被转成字符串，而是传回了对象本身;<br />
+验证猜想，果真如此，返回值不管是**数字**还是**函数**，都没有被转成字符串，而是传回了对象本身;<br />
 **但return并不会触发函数**，如果非要返回的函数执行，需要手动执行;
 
 ```javascript
