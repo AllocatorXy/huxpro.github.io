@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "js return一个函数会得到什么?"
-subtitle:   "执行? sting? function?"
+subtitle:   "执行? string? function?"
 date:       2017-02-13 13:06:00
 author:     "AllocatorXy"
 header-img: "img/post-bg-js-module.jpg"
