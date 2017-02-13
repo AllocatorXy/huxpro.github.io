@@ -25,9 +25,9 @@ tags:
 
 #### 模板字符串
 ```javascript
-    let a = `string1`;     // 使用``代替''包裹字符串
-    let b = `string2`;
-    let c = `${a}and${b}`; // string1andstring2
+let a = `string1`;     // 使用``代替''包裹字符串
+let b = `string2`;
+let c = `${a}and${b}`; // string1andstring2
 ```
 
 ### 基本数据类型
@@ -81,26 +81,41 @@ var n = '2'*1;    // result: 2
 
 ### 流程控制语句
 
-#### break
+#### 循环
+##### break
 ```javascript
-    // 停止执行 result:0 1 2
-    for (let i = 0; i <= 5; i++) {
-        if (i==3) {
-            break;
-        }
-        alert(i);
+// 停止执行 result:0 1 2
+for (let i = 0; i <= 5; i++) {
+    if (i==3) {
+        break;
     }
+    alert(i);
+}
+```
+##### continue
+```javascript
+// 跳过本次执行 result:0 1 2 4 5
+for (let i = 0; i <= 5; i++) {
+    if (i==3) {
+        continue;
+    }
+    alert(i);
+}
 ```
 
-#### continue
+#### 三目运算符
+三目运算符可用于缩写判断语句
 ```javascript
-    // 跳过本次执行 result:0 1 2 4 5
-    for (let i = 0; i <= 5; i++) {
-        if (i==3) {
-            continue;
-        }
-        alert(i);
-    }
+if(condition){
+    //..statement1;
+} else {
+    //..statement2;
+}
+condition ? statement1 : statement2;
+if(condition){
+    //..statement1;
+}
+condition && statement1;
 ```
 
 ### let&var
@@ -110,32 +125,32 @@ var n = '2'*1;    // result: 2
 **当在函数体之外，var与let没有区别**
 
 ```javascript
-    let a = 1;  // globally scoped
-    var b = 1;  // globally scoped
+let a = 1;  // globally scoped
+var b = 1;  // globally scoped
 ```
 
 >Function
 **当在函数体之外，var与let没有区别**
 
 ```javascript
-    function (){
-        let a = 1;  // function block scoped
-        var b = 1;  // function block scoped
-    }
+function (){
+    let a = 1;  // function block scoped
+    var b = 1;  // function block scoped
+}
 ```
 
 >Block
 **let只在最内层有效，而var在整个函数可见**
 
 ```javascript
-    function (){
-        /* j is visible in here */
-        for(let i=0;i<5;i++){
-           // i is only visible in here
-        }
-        for(var j=0;j<5;j++){
-           // j is visible in here
-        }
-        /* j is visible in here */
+function (){
+    /* j is visible in here */
+    for(let i=0;i<5;i++){
+       // i is only visible in here
     }
+    for(var j=0;j<5;j++){
+       // j is visible in here
+    }
+    /* j is visible in here */
+}
 ```
