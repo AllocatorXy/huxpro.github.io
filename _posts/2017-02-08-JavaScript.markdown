@@ -55,7 +55,7 @@ let c = `${a}and${b}`; // string1andstring2
 ##### 显式转换
 
 ###### 转换函数
-*转换函数是将字符串中第一个有效数字转换为数字*
+**转换函数是将字符串中第一个有效数字转换为数字**
 
 ```javascript
 // string转换成整数,不一定是十进制,parseInt支持基方法,可指定基数来转换其他数字为十进制
@@ -136,16 +136,16 @@ condition && statement1; // abbr
 ### let&var
 **let和var的区别，在于作用域的不同**
 
->Global
-**当在函数体之外，var与let没有区别**
+>Global<br />
+>**当在函数体之外，var与let没有区别**
 
 ```javascript
 let a = 1;  // globally scoped
 var b = 1;  // globally scoped
 ```
 
->Function
-**当在函数体之外，var与let没有区别**
+>Function<br />
+>**当在函数体之外，var与let没有区别**
 
 ```javascript
 function (){
@@ -154,8 +154,8 @@ function (){
 }
 ```
 
->Block
-**let只在最内层有效，而var在整个函数可见**
+>Block<br />
+>**let只在最内层有效，而var在整个函数可见**
 
 ```javascript
 function (){
