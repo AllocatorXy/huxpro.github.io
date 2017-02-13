@@ -6,7 +6,6 @@ date:       2017-02-13 11:06:00
 author:     "AllocatorXy"
 header-img: "img/js-bg.png"
 header-mask: 0.3
-catalog:    true
 tags:
     - 前端开发
     - JavaScript
