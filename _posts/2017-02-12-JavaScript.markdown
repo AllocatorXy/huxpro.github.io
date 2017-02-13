@@ -44,7 +44,9 @@ let c = `${a}and${b}`; // string1andstring2
 #### 显式转换
 
 ##### 转换函数
+
 *转换函数是将字符串中第一个有效数字转换为数字*
+
 ```javascript
 // string转换成整数,不一定是十进制,parseInt支持基方法,可指定基数来转换其他数字为十进制
 parseInt('string')   
@@ -59,6 +61,7 @@ parseFloat('0100')      // result: 100
 ```
 
 ##### 强制类型转换
+
 ```javascript
 Boolean(value)      // '',0,null,undefined -> false
 Number(value)       // Number与转换函数不同在于，非数字将直接转换为NaN
@@ -78,11 +81,15 @@ var n = '2'*1;    // result: 2
 
 ### 检测数据类型
 - isNaN() -> is Not a Number?true:false
+    + NaN == NaN -> false
+- typeof sth -> type of sth
+
 
 ### 流程控制语句
 
 #### 循环
 ##### break
+
 ```javascript
 // 停止执行 result:0 1 2
 for (let i = 0; i <= 5; i++) {
@@ -92,6 +99,7 @@ for (let i = 0; i <= 5; i++) {
     alert(i);
 }
 ```
+
 ##### continue
 ```javascript
 // 跳过本次执行 result:0 1 2 4 5
@@ -104,7 +112,8 @@ for (let i = 0; i <= 5; i++) {
 ```
 
 #### 三目运算符
-三目运算符可用于缩写判断语句
+**三目运算符可用于缩写判断语句**
+
 ```javascript
 if(condition){
     //..statement1;
