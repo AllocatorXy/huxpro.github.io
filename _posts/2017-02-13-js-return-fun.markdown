@@ -20,12 +20,13 @@ function a() {
     console.log('msg0');
     return function () {
         console.log('msg1');
+        return 'done';
     };
 }
 let res = a(); 
 let type = typeof res;
 // console: msg0
-// res: function () {console.log('msg1');}
+// res: function () {console.log('msg1'); return 'done';}
 // type: function
 ```
 
@@ -35,7 +36,36 @@ let type = typeof res;
 >↓于是这样就可以执行↓
 
 ```javascript
-res(); // console: msg1
+function a() {
+    console.log('msg0');
+    return function () {
+        console.log('msg1');
+        return 'done';
+    };
+}
+let res = a(); 
+res();
+let type = typeof res;
+// console: msg0 msg1
+// res: function () {console.log('msg1'); return 'done';}
+// type: function
+```
+
+>或者在给res赋值的时候直接把返回值运行
+
+```javascript
+function a() {
+    console.log('msg0');
+    return function () {
+        console.log('msg1');
+        return 'done';
+    };
+}
+let res = a()(); 
+let type = typeof res;
+// console: msg0 msg1
+// res: done
+// type: string
 ```
 
 >那么如果返回的是一个变量，而不是函数，我们得到的是
