@@ -23,6 +23,15 @@ tags:
     + 每次换行行末加\
     + ES6 模板字符串
 
+#### string下标
+```javascript
+let str = 'abc';
+/* 获取某一位置的字符 */
+str[0];          // 'a', 不兼容ie6,7
+str.charAt(1)    // 'b'
+// 如果在控制台打印对象str，会发现字符串是作为一个数组存储在内存中的
+```
+
 #### 模板字符串
 ```javascript
 let a = `string1`;     // 使用``代替''包裹字符串
@@ -78,8 +87,6 @@ String(value)
 ```
 
 ##### 隐式转换
-**因为js是弱类型语言，可以直接搞事情**
-
 ```javascript
 var x = '2'*2;    // result: 4
 var y = '2'+2;    // result: '22' *加号就当连字符处理了*
@@ -145,7 +152,7 @@ var b = 1;  // globally scoped
 ```
 
 >Function<br />
->**当在函数体之外，var与let没有区别**
+>**当在函数体内部，var与let没有区别**
 
 ```javascript
 function (){
