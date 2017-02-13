@@ -100,7 +100,11 @@
   text-overflow: ellipsis;
 }
 .side-catalog .catalog-body .h1_nav,
-.side-catalog .catalog-body .h2_nav,
+.side-catalog .catalog-body .h2_nav {
+  margin-left: 0;
+  font-size: 15px;
+  font-weight: bold;
+}
 .side-catalog .catalog-body .h3_nav {
   margin-left: 0;
   font-size: 14px;
@@ -109,6 +113,7 @@
 .side-catalog .catalog-body .h4_nav {
   padding-left: 10px;
   font-size: 13px;
+  font-weight: bold;
 }
 .side-catalog .catalog-body .h5_nav {
   padding-left: 20px;
@@ -132,9 +137,7 @@
 }
 @media (max-width: 1200px) {
   .side-catalog {
-    /*display: none;*/
-    position: relative;
-    float: left;
+    display: none;
   }
 }
 body {
