@@ -2,7 +2,7 @@
 layout:     post
 title:      "我的JS笔记"
 subtitle:   "我自己的js文档"
-date:       2017-02-12 15:00:00
+date:       2017-02-08 15:00:00
 author:     "AllocatorXy"
 header-img: "img/js-logo.png"
 header-mask: 0.3
