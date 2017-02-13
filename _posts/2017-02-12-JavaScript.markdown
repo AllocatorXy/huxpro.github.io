@@ -111,11 +111,12 @@ if(condition){
 } else {
     //..statement2;
 }
-condition ? statement1 : statement2;
+condition ? statement1 : statement2; // abbr
+
 if(condition){
     //..statement1;
 }
-condition && statement1;
+condition && statement1; // abbr
 ```
 
 ### let&var
