@@ -206,5 +206,3 @@ const oMonth = oDate.getMonth() + 1;  // 获取月份为2月
 ```
 /* under construction */
 
-### 闭包(closure)
-闭包其实就是一句话：子函数可以访问父函数变量，return子函数后，直接调用子函数也可以
