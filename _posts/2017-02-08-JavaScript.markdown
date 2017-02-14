@@ -191,4 +191,3 @@ const oMonth = oDate.getMonth() + 1;  // 获取月份为2月
 ```
 /* under construction */
 
-### 封闭空间和自执行函数
