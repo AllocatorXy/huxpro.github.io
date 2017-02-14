@@ -1,0 +1,40 @@
+---
+layout:     post
+title:      "js封闭空间与自执行函数"
+subtitle:   "封闭空间主要用来防止全局函数名污染空间"
+date:       2017-02-14 14:03:00
+author:     "AllocatorXy"
+comments: true
+header-img: "img/post-bg-js-module.jpg"
+header-mask: 0.3
+tags:
+    - 前端开发
+    - JavaScript
+---
+
+### 封闭空间和自执行函数
+- 封闭空间用来防止全局函数名污染空间，该函数名仅在封闭空间**`内部`**有效;
+- 封闭空间可以用来写**`自执行函数`**;
+- **`自执行函数`**可以是`匿名函数`
+
+```javascript
+(function print() {
+    console.log('msg');
+})();
+(function print() {
+    alert('msg2');
+})();
+// console: msg
+// alert: msg2
+```
+
+#### 参数
+封闭空间内函数可以传参,在执行括号内写参数值`(sth)`,在匿名函数声明时写参数;
+
+```javascript
+(function (arg) {
+    console.log(arg);
+})('msg');
+// console: msg
+```
+

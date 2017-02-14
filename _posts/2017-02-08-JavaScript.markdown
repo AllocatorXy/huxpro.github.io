@@ -55,8 +55,8 @@ let c = `${a}and${b}`; // string1andstring2
 ```
 
 #### 检测数据类型
-- isNaN() -> is Not a Number?true:false
-    + NaN == NaN -> false
+- isNaN() -> is **Not** a Number?true:false
+    + NaN == NaN -> **false**
 - typeof sth -> type of sth
 
 #### 类型转换
@@ -176,3 +176,19 @@ function (){
     /* j is visible in here */
 }
 ```
+
+### 日期对象Date()
+- 当日期对象声明时，会获取到当前时间，并且**不会**自动改变，所以这里用`const`比较好;
+- 注意月份在计算机中存储是`0-11`，所以设置和获取的时候都要做处理;
+- 时间对象会自动**进位**，例如当月份为12时，年份+1;
+
+```javascript
+const oDate = new Date();
+    oDate.setFullYear(2018,1,14);     // 设置oDate为2018年2月14日
+
+const oMonth = oDate.getMonth() + 1;  // 获取月份为2月
+
+```
+/* under construction */
+
+### 封闭空间和自执行函数
