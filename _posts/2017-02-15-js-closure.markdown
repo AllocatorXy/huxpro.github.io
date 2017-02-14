@@ -2,7 +2,7 @@
 layout:     post
 title:      "js闭包(closure)"
 subtitle:   "闭包是什么？是用来做什么的？"
-date:       2017-02-14 16:50:00
+date:       2017-02-15 16:50:00
 author:     "AllocatorXy"
 comments: true
 header-img: "img/post-bg-js-module.jpg"
