@@ -8,9 +8,9 @@ header-img: "img/js-logo.png"
 header-mask: 0.3
 catalog:    true
 tags:
-    - 前端开发
-    - JavaScript
-    - noteBook
+	- 前端开发
+	- JavaScript
+	- noteBook
 ---
 
 ## javaScript
@@ -19,9 +19,9 @@ tags:
 
 #### string换行
 - string不能直接换行，换行需要搞事情：
-    + 加号拼接
-    + 每次换行行末加\
-    + ES6 模板字符串
+	+ 加号拼接
+	+ 每次换行行末加\
+	+ ES6 模板字符串
 
 #### string下标
 ```javascript
@@ -40,23 +40,23 @@ let c = `${a}and${b}`; // string1andstring2
 ```
 
 ### 基本数据类型
-    1. string
-    2. number
-    3. boolean
-    4. undefined
-    5. function     // 官方文档里没有定义function为数据类型，但typeof可以弹出
-    6. object       // 可分为元素,array,null
-    7. global       // es6顶层对象
+	1. string
+	2. number
+	3. boolean
+	4. undefined
+	5. function     // 官方文档里没有定义function为数据类型，但typeof可以弹出
+	6. object       // 可分为元素,array,null
+	7. global       // es6顶层对象
 
 #### 数据真假(true/false)
 ```javascript
-    false: false, 0, '', null, undefined, NaN;
-    true: true, 非空对象, 非0数字, 非空字符串;
+	false: false, 0, '', null, undefined, NaN;
+	true: true, 非空对象, 非0数字, 非空字符串;
 ```
 
 #### 检测数据类型
 - isNaN() -> is **Not** a Number?true:false
-    + NaN == NaN -> **false**
+	+ NaN == NaN -> **false**
 - typeof sth -> type of sth
 
 #### 类型转换
@@ -103,10 +103,10 @@ var n = '2'*1;    // result: 2
 ```javascript
 // 停止执行 result:0 1 2
 for (let i = 0; i <= 5; i++) {
-    if (i==3) {
-        break;
-    }
-    alert(i);
+	if (i==3) {
+		break;
+	}
+	alert(i);
 }
 ```
 
@@ -114,10 +114,10 @@ for (let i = 0; i <= 5; i++) {
 ```javascript
 // 跳过本次执行 result:0 1 2 4 5
 for (let i = 0; i <= 5; i++) {
-    if (i==3) {
-        continue;
-    }
-    alert(i);
+	if (i==3) {
+		continue;
+	}
+	alert(i);
 }
 ```
 
@@ -128,19 +128,34 @@ for (let i = 0; i <= 5; i++) {
 
 ```javascript
 if(condition){
-    //..statement1;
+	//..statement1;
 } else {
-    //..statement2;
+	//..statement2;
 }
 condition ? statement1 : statement2; // abbr
 
 if(condition){
-    //..statement1;
+	//..statement1;
 }
 condition && statement1; // abbr
 ```
 
-### let&var
+### 作用域
+在函数内部声明变量，则变量是该函数的`局部变量`，在外部声明变量，则变量是`全局变量`；<br />
+局部变量的作用域就是`该函数内部`，全局变量的作用域就是全局；<br />
+**!!若在函数内部不用指令声明变量，则实际声明了一个`全局变量`;!!**
+
+```javascript
+function fn() {
+	i = 1;  // globally scoped
+}
+window.onload = function () {
+	fn();
+	alert(i);   // 1
+};
+```
+
+#### let & var
 **let和var的区别，在于作用域的不同**
 
 >Global<br />
@@ -156,8 +171,8 @@ var b = 1;  // globally scoped
 
 ```javascript
 function (){
-    let a = 1;  // function block scoped
-    var b = 1;  // function block scoped
+	let a = 1;  // function block scoped
+	var b = 1;  // function block scoped
 }
 ```
 
@@ -166,14 +181,14 @@ function (){
 
 ```javascript
 function (){
-    /* j is visible in here */
-    for(let i=0;i<5;i++){
-       // i is only visible in here
-    }
-    for(var j=0;j<5;j++){
-       // j is visible in here
-    }
-    /* j is visible in here */
+	/* j is visible in here */
+	for(let i=0;i<5;i++){
+		// i is only visible in here
+	}
+	for(var j=0;j<5;j++){
+		// j is visible in here
+	}
+	/* j is visible in here */
 }
 ```
 
@@ -184,10 +199,12 @@ function (){
 
 ```javascript
 const oDate = new Date();
-    oDate.setFullYear(2018,1,14);     // 设置oDate为2018年2月14日
+	oDate.setFullYear(2018,1,14);     // 设置oDate为2018年2月14日
 
 const oMonth = oDate.getMonth() + 1;  // 获取月份为2月
 
 ```
 /* under construction */
 
+### 闭包(closure)
+闭包其实就是一句话：子函数可以访问父函数变量，return子函数后，直接调用子函数也可以
