@@ -8,8 +8,8 @@ comments: true
 header-img: "img/post-bg-js-module.jpg"
 header-mask: 0.3
 tags:
-	- 前端开发
-	- JavaScript
+    - 前端开发
+    - JavaScript
 ---
 
 ### 封闭空间和自执行函数
@@ -19,10 +19,10 @@ tags:
 
 ```javascript
 (function print() {
-	console.log('msg1');
+    console.log('msg1');
 })();
 (function print() { // 函数名相同
-	alert('msg2');
+    alert('msg2');
 })();
 // console: msg1
 // alert: msg2
@@ -32,7 +32,7 @@ tags:
 
 ```javascript
 (function () {
-	console.log('msg');
+    console.log('msg');
 })();
 // console: msg
 ```
@@ -41,7 +41,7 @@ tags:
 
 ```javascript
 (function (arg) {
-	console.log(arg);
+    console.log(arg);
 })('msg');
 // console: msg
 ```
@@ -52,7 +52,7 @@ tags:
 
 ```javascript
 (function (arg) {
-	alert(arg);
+    alert(arg);
 })('msg1')('msg2');
 // alert: msg1
 // console: Uncaught TypeError: (intermediate value)(...) is not a function
@@ -62,10 +62,10 @@ tags:
 
 ```javascript
 (function (arg) {
-	alert(arg);
-	return function (arg) {
-		alert(arg);
-	};
+    alert(arg);
+    return function (arg) {
+        alert(arg);
+    };
 })('msg1')('msg2');
 // alert: msg1
 // alert: msg2
