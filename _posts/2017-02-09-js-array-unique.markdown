@@ -68,7 +68,7 @@ Array.prototype.uniq = function() {
 
 - 创建一个结果数组和一个json对象；
 - 遍历原数组，每次查找其在json中是否有值；
-- 将不存在的放入结果数组，并在json中以该元素创建一个属性并随意赋值；
+- 将不存在的放入结果数组，并在json中以该元素创建一个键并随意赋值；
 
 ```javascript
 Array.prototype.uniq = function() {

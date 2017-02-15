@@ -29,7 +29,6 @@ let str = 'abc';
 /* 获取某一位置的字符 */
 str[0];          // 'a', 不兼容ie6,7
 str.charAt(1)    // 'b'
-// 如果在控制台打印对象str，会发现字符串是作为一个数组存储在内存中的
 ```
 
 #### 模板字符串
@@ -199,10 +198,25 @@ function (){
 
 ```javascript
 const oDate = new Date();
-    oDate.setFullYear(2018,1,14);     // 设置oDate为2018年2月14日
+oDate.setFullYear(2018,1,14);     // 设置oDate为2018年2月14日
 
 const oMonth = oDate.getMonth() + 1;  // 获取月份为2月
 
 ```
 /* under construction */
+
+### 数组(Array)
+
+#### 数组操作
+```javascript
+let arr=[1,2,3];
+let arr1=[4,5,6];
+let arr2=[7,8,9];
+alert(arr.concat(arr1,arr2)); // [1,2,3,4,5,6,7,8,9] 数组连接
+alert(arr.reverse())          // [3,2,1] 数组倒序排列
+
+
+
+```
+
 
