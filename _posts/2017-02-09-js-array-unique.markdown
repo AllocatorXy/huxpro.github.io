@@ -72,8 +72,8 @@ Array.prototype.uniq = function() {
 
 ```javascript
 Array.prototype.uniq = function() {
-    let res = [];
-    let json = {};
+    const res = [];
+    const json = {};
     for (let i = 0; i < this.length; i++) {
         if (!json[this[i]]) { // 若不存在该属性，将其放入res并建立该属性到json
             res.push(this[i]);
