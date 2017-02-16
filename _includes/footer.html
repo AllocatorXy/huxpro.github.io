@@ -159,7 +159,20 @@
                 color: {start: '#bbbbee', end: '#0085a1'},
             };
             $('#tag_cloud a').tagcloud();
-        })
+        });
+    }
+</script>
+
+<!-- jquery.toTop-pc || mobile.js -->
+<script>
+    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+        async('{{ "/js/jquery.toTop-pc.js" | prepend: site.baseurl }}',function(){
+            btnToTop();
+        });
+    } else {
+        async('{{ "/js/jquery.toTop-pc.js" | prepend: site.baseurl }}',function(){
+            btnToTop();
+        });
     }
 </script>
 
@@ -170,7 +183,6 @@
         if($nav) FastClick.attach($nav);
     })
 </script>
-
 
 <!-- Google Analytics -->
 {% if site.ga_track_id %}
@@ -189,7 +201,6 @@
     ga('send', 'pageview');
 </script>
 {% endif %}
-
 
 <!-- Baidu Tongji -->
 {% if site.ba_track_id %}
