@@ -2,7 +2,7 @@
 function btnToTop() {
     $(window).scroll(function() {
         const s = $(window).scrollTop();
-        s >= 700 ? $('.btnToTop').stop(true, true).fadeIn('fast') :
+        s >= 700 ? $('.btnToTop').show() :
                    $('.btnToTop').stop().fadeOut('fast');
     });
     $('.btnToTop').click(function() {
