@@ -281,8 +281,9 @@ const oDate = new Date();
 oDate.setFullYear(2018, 1, 14);       // 设置oDate为2018年2月14日
 oDate.setHours(h, m, s, ms);          // 设置oDate的时分秒和毫秒
 const oHours = oDate.getHours();      // 获取oDate的小时数
-const oHours = oDate.getMinutes();    // 获取oDate的分钟数
-const oHours = oDate.getSeconds();    // 获取oDate的秒数
+const oMin = oDate.getMinutes();      // 获取oDate的分钟数
+const oSeconds = oDate.getSeconds();  // 获取oDate的秒数
 const oMonth = oDate.getMonth() + 1;  // 获取月份为2月
+const oMonth = oDate.getDay();        // 星期n, 0-6, 0是星期天
 const oTime = oDate.getTime();        // 获取时间戳,1970.1.1 00:00至当前时间对象的毫秒数
 ```
