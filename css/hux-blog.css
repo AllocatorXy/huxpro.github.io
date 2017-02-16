@@ -1,4 +1,4 @@
-@media screen and (min-device-width:1024px) {   
+@media (min-width: 1200px) {   
     #btnToTop{
       z-index: 999;
       position: fixed;
@@ -21,7 +21,7 @@
       transform: scale(1.3, 1.3);
     }
 }
-@media screen and (max-device-width:1024px) {   
+@media (max-width: 1024px) {   
     #btnToTop{
       z-index: 999;
       position: fixed;
