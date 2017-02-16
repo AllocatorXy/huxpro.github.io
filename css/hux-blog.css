@@ -1,5 +1,5 @@
-@media screen and (min-device-width:1200px) {   
-    .btnToTop{
+@media screen and (min-device-width:1024px) {   
+    #btnToTop{
       z-index: 999;
       position: fixed;
       right: 200px;
@@ -14,15 +14,15 @@
       background: url(../img/to-top.png) no-repeat;
       background-size: 100%;
     }
-    .btnToTop:hover{
+    #btnToTop:hover{
       transform: scale(1.1, 1.1);
     }
-    .btnToTop:active{
+    #btnToTop:active{
       transform: scale(1.3, 1.3);
     }
 }
-@media screen and (max-device-width:1200px) {   
-    .btnToTop{
+@media screen and (max-device-width:1024px) {   
+    #btnToTop{
       z-index: 999;
       position: fixed;
       right: 4%;
@@ -37,9 +37,6 @@
       -webkit-tap-highlight-color: rgba(0,0,0,0);
       background: url(../img/to-top.png) no-repeat;
       background-size: 100%;
-    }
-    .btnToTop:active{
-      transform: scale(1.1, 1.1);
     }
 }
 @media (min-width: 1200px) {
