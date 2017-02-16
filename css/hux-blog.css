@@ -1,3 +1,39 @@
+@media screen and (orientation: landscape) {   
+    .toTop{
+        display: block;
+        position: fixed;
+        right: 200px;
+        bottom: 50px;
+        width: 80px;
+        border-radius: 50%;
+        user-select: none;
+        cursor: pointer;
+        display: none;
+        transition: transform .1s;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    .toTop:hover{
+        transform: scale(1.1, 1.1);
+    }
+}
+@media screen and (orientation: portrait) {   
+    .toTop{
+        display: block;
+        position: fixed;
+        right: 10%;
+        bottom: 15%;
+        width: 10%;
+        border-radius: 50%;
+        user-select: none;
+        cursor: pointer;
+        display: none;
+        transition: transform .1s;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    .toTop:active{
+        transform: scale(1.1, 1.1);
+    }
+}
 @media (min-width: 1200px) {
   .post-container,
   .sidebar-container {

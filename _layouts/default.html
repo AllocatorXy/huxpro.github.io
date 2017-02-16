@@ -13,6 +13,23 @@
     {% include footer.html %}
 
 
+<!-- toTop Button -->
+<img src="../img/to-top.png" alt="" class="toTop" />
+<!-- toTop js -->
+<script type="text/javascript">
+    $(function() {
+        $(window).scroll(function() {
+            const s = $(window).scrollTop();
+            s >= 700 ? $('.toTop').stop(true).fadeIn('fast') :
+                       $('.toTop').stop(true).fadeOut('fast');
+        });
+        $('.toTop').click(function() {
+            $('html, body').animate({ scrollTop: 0 }, 'fast');
+        });
+    });
+</script>
+
+
 <!-- Image to hack wechat -->
 <img src="/img/icon_wechat.png" width="0" height="0" />
 <!-- Migrate from head to bottom, no longer block render and still work -->
