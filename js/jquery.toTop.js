@@ -24,6 +24,9 @@ function btnToTop() {
             $('html, body').stop().animate({ scrollTop: 0 }, 'fast');
             oBtn.css('transform', 'scale(1.2, 1.2)');
         });
+        oBtn.on('touchmove', function() {
+            return false;
+        });
         oBtn.on('touchend', function() {
             oBtn.css('transform', 'scale(1.0, 1.0)');
         });

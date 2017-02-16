@@ -1,0 +1,22 @@
+#btnToTop{
+  z-index: 999;
+  position: fixed;
+  right: 200px;
+  bottom: 50px;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  user-select: none;
+  cursor: pointer;
+  display: none;
+  transition: transform .1s;
+  background: url(../img/to-top.png) no-repeat;
+  background-size: 100%;
+  border: none;
+}
+#btnToTop:hover{
+  transform: scale(1.1, 1.1);
+}
+#btnToTop:active{
+  transform: scale(1.3, 1.3);
+}
