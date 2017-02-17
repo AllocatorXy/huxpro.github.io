@@ -104,7 +104,7 @@
 <script src="{{ "/js/hux-blog.min.js " | prepend: site.baseurl }}"></script>
 
 <!-- btn To Top -->
-<script src="{{ "/js/jquery.toTop.js " | prepend: site.baseurl }}"></script>
+<!-- <script src="{{ "/js/jquery.toTop.js " | prepend: site.baseurl }}"></script> -->
 
 <!-- Service Worker -->
 {% if site.service-worker %}
@@ -164,6 +164,13 @@
             $('#tag_cloud a').tagcloud();
         });
     }
+</script>
+
+<!-- jquery.toTop.js -->
+<script>
+    async('{{ "/js/jquery.toTop.js" | prepend: site.baseurl }}',function(){
+        btnToTop();
+    });
 </script>
 
 <!--fastClick.js -->
