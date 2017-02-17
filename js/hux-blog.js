@@ -43,16 +43,14 @@ $(document).ready(function() {
 
 // toTop
 $(document).ready(function() {
-    $(function btnToTop() {
-        'use strict';
-        const oBtn = $('#btnToTop');
-        oBtn.click(function() {
-            $('html, body').animate({ scrollTop: 0 }, 200);
-        });
+    $(function() {
         $(window).scroll(function() {
             const s = $(window).scrollTop();
-            s >= 500 ? oBtn.show() :
-                       oBtn.stop().fadeOut(200);
+            s >= 500 ? $('.toTop').show() :
+                       $('.toTop').stop(true).fadeOut(200);
+        });
+        $('.toTop').click(function() {
+            $('html, body').animate({ scrollTop: 0 }, 200);
         });
     });
 });
