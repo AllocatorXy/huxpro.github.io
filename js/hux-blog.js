@@ -46,10 +46,10 @@ $(document).ready(function() {
     $(function() {
         $(window).scroll(function() {
             const s = $(window).scrollTop();
-            s >= 500 ? $('.toTop').show() :
-                       $('.toTop').stop(true).fadeOut(200);
+            s >= 500 ? $('#btnToTop').show() :
+                       $('#btnToTop').stop(true).fadeOut(200);
         });
-        $('.toTop').click(function() {
+        $('#btnToTop').click(function() {
             $('html, body').animate({ scrollTop: 0 }, 200);
         });
     });
