@@ -752,10 +752,6 @@ pre code {
   font-size: 13px;
   font-style: italic;
   color: #a3a3a3;
-  -webkit-transition: color .3s;
-  -moz-transition: color .3s;
-  -ms-transition: color .3s;
-  -o-transition: color .3s;
   transition: color .3s;
 }
 .post-content-preview:hover {

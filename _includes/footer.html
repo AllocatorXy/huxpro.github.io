@@ -161,7 +161,7 @@
 </script>
 
 <!-- btnToTop -->
-<script>
+<!-- <script>
     // toTop
     $(document).ready(function() {
         $(function() {
@@ -175,7 +175,21 @@
             });
         });
     });
+</script> -->
+<!-- animatescroll.min.js -->
+<script>
+    async('{{ "/js/animatescroll.min.js" | prepend: site.baseurl }}',function(){
+        $(window).scroll(function() {
+            const s = $(window).scrollTop();
+            s >= 500 ? $('#btnToTop').show() :
+                       $('#btnToTop').stop().fadeOut(200);
+        });
+        $('#btnToTop').click(function() {
+            $('body').animatescroll({scrollSpeed:700, easing:'easeInOutCubic'});
+        });
+    });
 </script>
+
 
 <!--fastClick.js -->
 <script>
