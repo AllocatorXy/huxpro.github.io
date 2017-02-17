@@ -47,7 +47,7 @@ $(document).ready(function() {
         $(window).scroll(function() {
             const s = $(window).scrollTop();
             s >= 500 ? $('#btnToTop').show() :
-                       $('#btnToTop').stop(true).fadeOut(200);
+                       $('#btnToTop').stop().fadeOut(200);
         });
         $('#btnToTop').click(function() {
             $('html, body').animate({ scrollTop: 0 }, 200);

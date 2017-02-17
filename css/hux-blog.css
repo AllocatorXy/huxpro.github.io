@@ -16,10 +16,10 @@
     background: url(../img/to-top.png) no-repeat;
     background-size: 100%;
   }
-  /*#btnToTop:focus,
+  #btnToTop:focus,
   #btnToTop:hover {
     transform: scale(1.2, 1.2);
-  }*/
+  }
   #btnToTop:active{
     transform: scale(1.5, 1.5);
   }
