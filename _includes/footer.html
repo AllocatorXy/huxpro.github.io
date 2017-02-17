@@ -170,8 +170,10 @@
 <script>
     async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
         var $nav = document.querySelector("nav");
+        var $btnT = document.querySelector('#btnToTop');
         if($nav) FastClick.attach($nav);
-    })
+        FastClick.attach($btnT);
+    });
 </script>
 
 <!-- Google Analytics -->
