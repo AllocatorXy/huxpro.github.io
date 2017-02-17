@@ -18,10 +18,10 @@
   }
   #btnToTop:focus,
   #btnToTop:hover {
-    transform: scale(1.2, 1.2);
+    background-color: inherit;
   }
   #btnToTop:active{
-    transform: scale(1.5, 1.5);
+    background-color: rgba(0, 0, 0, .25);
   }
 }
 @media screen and (min-width: 1367px) {
