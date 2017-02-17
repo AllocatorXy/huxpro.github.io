@@ -168,9 +168,7 @@
 
 <!-- jquery.toTop.js -->
 <script>
-    async('{{ "/js/jquery.toTop.js" | prepend: site.baseurl }}',function(){
-        btnToTop();
-    });
+    async('{{ "/js/jquery.toTop.js" | prepend: site.baseurl }}');
 </script>
 
 <!--fastClick.js -->
@@ -178,8 +176,8 @@
     async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
         var $nav = document.querySelector("nav");
         var $btnT = document.querySelector('#btnToTop');
-        if($nav) FastClick.attach($nav);
         FastClick.attach($btnT);
+        if($nav) FastClick.attach($nav);
     });
 </script>
 
