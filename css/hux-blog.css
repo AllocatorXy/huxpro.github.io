@@ -9,6 +9,7 @@
     border-color: transparent;
     border-radius: 50%;
     user-select: none;
+    outline: none;
     cursor: pointer;
     display: none;
     background: url(../img/to-top.png) no-repeat;
@@ -35,6 +36,7 @@
     border-color: transparent;
     border-radius: 50%;
     user-select: none;
+    outline: none;
     cursor: pointer;
     display: none;
     transition: transform .1s;
