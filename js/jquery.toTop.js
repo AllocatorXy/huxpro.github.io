@@ -1,5 +1,5 @@
 'use strict';
-(function btnToTop() {
+$(function btnToTop() {
     const oBtn = $('#btnToTop');
     $(window).scroll(function() {
         const s = $(window).scrollTop();
@@ -9,4 +9,4 @@
     oBtn.click(function() {
         $('html, body').animate({ scrollTop: 0 }, 'fast');
     });
-})();
+});

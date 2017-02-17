@@ -28,10 +28,10 @@ tags:
 ```javascript
 let str = 'abc';
 /* 按字符串下标获取字符串 */
-str[0];                   // 'a', 不兼容ie6,7
-str.charAt(1)             // 'b'
+str[0];                    // 'a', 不兼容ie6,7
+str.charAt(1)              // 'b'
 let str='abcdefg';
-let s=str.substring(0,3); // 'abc', 不包含结束位置
+let s=str.substring(0, 3); // 'abc', 从下标n开始，获取m个
 /* 找到字符第一次在string中出现的下标 */
 str.indexOf('c') // 2
 str.indexOf('z') // -1
