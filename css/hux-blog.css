@@ -4,17 +4,17 @@
     position: fixed;
     right: 2%;
     bottom: 12%;
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
     border-color: transparent;
     border-radius: 50%;
     user-select: none;
     cursor: pointer;
     display: none;
-    transition: transform .1s;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
     background: url(../img/to-top.png) no-repeat;
     background-size: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-overflow-scrolling:touch
   }
   #btnToTop:focus,
   #btnToTop:hover {

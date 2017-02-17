@@ -93,7 +93,7 @@
         </div>
     </div>
     <!-- toTop Button -->
-    <div id="btnToTop"></div>
+    <button data-am-smooth-scroll="{position: 57, speed: 5000}" id="btnToTop"></button>
 </footer>
 
 
@@ -104,7 +104,8 @@
 <script src="{{ "/js/bootstrap.min.js " | prepend: site.baseurl }}"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="{{ "/js/hux-blog.js " | prepend: site.baseurl }}"></script>
+<script src="{{ "/js/hux-blog.min.js " | prepend: site.baseurl }}"></script>
+
 
 <!-- btn To Top -->
 <!-- <script src="{{ "/js/jquery.toTop.js " | prepend: site.baseurl }}"></script> -->
@@ -169,10 +170,22 @@
     }
 </script>
 
-<!-- jquery.toTop.js -->
-<!-- <script>
-    async('{{ "/js/jquery.toTop.js" | prepend: site.baseurl }}');
-</script> -->
+<!-- btnToTop -->
+<script>
+    // toTop
+    $(document).ready(function() {
+        $(function() {
+            $(window).scroll(function() {
+                const s = $(window).scrollTop();
+                s >= 500 ? $('#btnToTop').show() :
+                           $('#btnToTop').stop().fadeOut(200);
+            });
+            $('#btnToTop').click(function() {
+                $('html, body').animate({ scrollTop: 0 }, 700);
+            });
+        });
+    });
+</script>
 
 <!--fastClick.js -->
 <script>

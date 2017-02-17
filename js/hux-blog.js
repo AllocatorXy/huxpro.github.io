@@ -41,20 +41,6 @@ $(document).ready(function() {
     $('iframe[src*="vimeo.com"]').addClass('embed-responsive-item');
 });
 
-// toTop
-$(document).ready(function() {
-    $(function() {
-        $(window).scroll(function() {
-            const s = $(window).scrollTop();
-            s >= 500 ? $('#btnToTop').show() :
-                       $('#btnToTop').stop().fadeOut(200);
-        });
-        $('#btnToTop').click(function() {
-            $('html, body').animate({ scrollTop: 0 }, 200);
-        });
-    });
-});
-
 // Navigation Scripts to Show Header on Scroll-Up
 jQuery(document).ready(function($) {
     var MQL = 1170;
