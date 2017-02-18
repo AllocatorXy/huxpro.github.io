@@ -66,11 +66,12 @@ var str = 'Hello World';
 来个更直观的栗子：
 
 ```js
+// 未编译                           // 预编译后
 (function() {                      (function() {
     alert(a+b+c);      ===>            var a,b,c;
     var a = 1;         ===>            alert(a+b+c); // undefined
     var b = 2;         ===>            a = 1;    
-    var c = 3;      /*预编译*/         b = 2;    
+    var c = 3;                         b = 2;    
 })();                                  c = 3;
                                    })();
                                    

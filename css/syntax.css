@@ -44,7 +44,7 @@
 .highlight .kd { /*font-weight: bold;*/ color: #6700b9; }
 .highlight .kn { font-weight: bold; }
 .highlight .kp { font-weight: bold; }
-.highlight .kr { font-weight: bold; }
+.highlight .kr { /*font-weight: bold;*/ color: #6700b9; }
 .highlight .kt { color: #445588; font-weight: bold; }
 .highlight .m { color: #009999; }
 .highlight .s { color: #dd1144; }
