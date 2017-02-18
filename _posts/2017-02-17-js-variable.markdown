@@ -70,7 +70,7 @@ var str = 'Hello World';
     alert(a+b+c);      ===>            var a,b,c;
     var a = 1;         ===>            alert(a+b+c); // undefined
     var b = 2;         ===>            a = 1;    
-    var c = 3;        预编译           b = 2;    
+    var c = 3;      /*预编译*/         b = 2;    
 })();                                  c = 3;
                                    })();
                                    
@@ -105,6 +105,33 @@ var fn = function fn() {
 | const  |    √     |    ×   |    ×   |    ×   |
 
 <hr />
+
+##### 暂时性死区(Temporal Dead Zone)
+>ES6明确规定，如果区块中存在`let`或`const`命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域;<br />
+>只要一进入当前作用域，所要使用的变量就**<font color="red">已经存在</font>**了，但是不可访问;<br />
+>**<font color="red">在声明之前以任何方式访问这些变量，就会报错(not defined)</font>**
+
+```js
+let a = 1;
+function fn() {      // 如果let是声明时才有，这里会打印1
+    console.log(a);  // not defined，说明let是一开始就存在
+    let a = 2;
+}
+fn();
+```
+<hr />
+
+如果用`typeof`访问不存在的变量，会返回`undefined`，但如果在TDZ中这样做，会**<font color="red">直接挂掉</font>**;<br />
+**<font color="red" style="font-size: 20px;" >真的会死(/"≡ _ ≡)/~┴┴</font>**
+
+```js
+/* 非TDZ */                             /* TDZ */
+(function () {                       |  (function () { 
+    alert(typeof i); /* undefined*/  |      alert(typeof i); /* not defined */
+})();                                |      let i = 1;
+                                     |  })();
+```
+---
 
 ##### `let`&`var`
 
@@ -149,10 +176,12 @@ const命令用来声明**<font color="red">常变量(Constant Variable)</font>**
 - 与let相同，const自声明只在声明的**块级作用域**有效;
 - 如果试图改变const的地址，会报错`TypeError: Assignment to constant variable`;
 - 常变量(Constant Variable)，值可以被改变，但地址不能被改变;
+- const在声明时必须初始化，不然会报错`SyntaxError: Missing initializer in const declaration`;
 
 ```js
 const num = 1;
 num = 2; // TypeError: Assignment to constant variable.
+const a; // SyntaxError: Missing initializer in const declaration
 
 for (const prop in obj) { // available
   // statement..
