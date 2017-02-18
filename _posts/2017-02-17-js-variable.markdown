@@ -5,7 +5,7 @@ subtitle:   "如何正确使用let&const, var为什么不好使?"
 date:       2017-02-17 11:25:00
 author:     "AllocatorXy"
 comments:   true
-header-img: "img/post-bg-js-module.jpg"
+header-img: "img/post-bg-pot.jpg"
 header-mask: 0.3
 tags:
     - 前端开发
@@ -52,7 +52,7 @@ var str = 'Hello World';
 这就牵扯到了js的**<font color="red">变量提升</font>**<br />
 >在使用`var`声明变量时，**<font color="red">声明</font>**会被**提升**到当前作用域的顶部，但**<font color="red">变量值</font>****不会被提升**。
 
-于是上面的代码实际上被解析成了这样：
+于是上面的代码**预编译(Precompile)**后成了这样：
 
 ```javascript
 var str = 'Hello World'; 
@@ -63,15 +63,17 @@ var str = 'Hello World';
 })();
 ```
 
-当声明多个变量时，最后被解析会变成这样：
+来个更直观的栗子：
 
 ```js
 (function() {                      (function() {
-    alert(a);          ===>            var a,b;
-    alert(b);          ===>            alert(a); // undefined
-    var a = 1;         ===>            alert(a);
-    var b = 2;                         a = 1; b=2;
-})();                               })();
+    alert(a+b+c);      ===>            var a,b,c;
+    var a = 1;         ===>            alert(a+b+c); // undefined
+    var b = 2;         ===>            a = 1;    
+    var c = 3;        预编译           b = 2;    
+})();                                  c = 3;
+                                   })();
+                                   
 ```
 <hr />
 
