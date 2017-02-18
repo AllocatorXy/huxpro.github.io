@@ -4,7 +4,7 @@ title:      "js return一个函数会得到什么?"
 subtitle:   "执行? string? function?"
 date:       2017-02-13 13:06:00
 author:     "AllocatorXy"
-comments: true
+comments:   true
 header-img: "img/post-bg-js-module.jpg"
 header-mask: 0.3
 tags:
@@ -39,7 +39,7 @@ function a() {
 let res = a(); // console: msg0
 alert(res);    // function () {console.log('msg1');}
 ```
-
+<hr />
 查看res的类型，发现是function，**并没有被转换成字符串**;<br />
 看来，这个return只是返回了这个匿名函数对象，return没有触发这个函数；
 

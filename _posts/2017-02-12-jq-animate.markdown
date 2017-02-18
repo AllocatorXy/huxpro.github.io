@@ -4,7 +4,7 @@ title:      "jq动画使用"
 subtitle:   "animate使用时的注意事项"
 date:       2017-02-12 20:24:00
 author:     "AllocatorXy"
-comments: true
+comments:   true
 header-img: "img/post-bg-js-module.jpg"
 header-mask: 0.3
 tags:
@@ -32,6 +32,8 @@ $('selector').animate(styles, options);
 #### 用stop()终止动画
 ```javascript
 /* 终止当前动画后再开始新动画以解决用户快速多次触发后根本停不下来的问题 */
+
+// stop(stopAll, goToEnd) 第一个参数是否停止当前动画，第二个是否到达末状态
 
 $('selector').stop().animate(...) // 停止元素当前动画并继续下个动画
 

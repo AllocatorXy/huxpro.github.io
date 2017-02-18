@@ -4,7 +4,7 @@ title:      "js数组去除重复元素"
 subtitle:   "js数组去重的三种常用方式"
 date:       2017-02-09 21:00:00
 author:     "AllocatorXy"
-comments: true
+comments:   true
 header-img: "img/js-bg.png"
 header-mask: 0.3
 tags:
@@ -41,6 +41,7 @@ Array.prototype.uniq = function() {
     return res;
 };
 ```
+<hr />
 
 #### function 2
 **这种方法效率会比function 1 高，时间复杂度为`O(n)`，但会影响原数组顺序**
@@ -62,6 +63,7 @@ Array.prototype.uniq = function() {
     return res;
 };
 ```
+<hr />
 
 #### function 3
 **这种方法时间复杂度与第二种相同，但因为少了一次快速排序，效率最高，且不影响数组顺序**

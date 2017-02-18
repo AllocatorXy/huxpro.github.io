@@ -57,71 +57,6 @@ let b = `string2`;
 let c = `${a}and${b}`; // string1andstring2
 ```
 
-### 数组(Array)
-
-#### 数组操作
-
-##### 声明
-```javascript
-let arr=[ 1, 2, 3 ];
-let arr=new Array(1, 2, 3, 4);
-arr = Array.of(3,2,1);
-let arr=new Array(3);           // 长度为3的空数组
-```
-
-##### 转换为字符串
-```javascript
-let arr = [ 1, 'a', 2, 'b' ];
-let arr2 = [ 1, 'a', 2, 'b' ];
-arr.join('');                 // arr: '1a2b'
-arr2.join('&');               // arr: '1&a&2&b'
-```
-
-##### 添加与删除
-```javascript
-let arr = [ 1, 2, 3 ];
-arr.push(5);             // arr: [ 1, 2, 3, 5 ] 从后面插入
-arr.unshift(0);          // arr: [ 0, 1, 2, 3, 5 ] 从前面插入
-arr.pop();               // arr: [ 0, 1, 2, 3 ] 从后面删除
-arr.shift();             // arr: [ 1, 2, 3 ] 从前面删除
-```
-
-##### 万能操作splice()
->arr.splice(m, n, ...)
-
-- 从下标m开始，删除n个；
-- 若n大于剩余长度，也可以执行；
-- 若后面有元素则插入后面的元素；
-
-```javascript
-let arr1 = [ 1, 2 ]
-arr.splice(1, 2, 'a', 'b', 'c');    // arr: [1, a, b, c]
-```
-
-##### 排序和连接
-```javascript
-let arr = [ 1, 2, 3 ];
-let arr1 = [ 4, 5, 6 ];
-let arr2 = [ 7, 8, 9 ];
-let arr3 = [ 31, 22, 15, 47, 'aa', 'bz', 'aa', 22 ];
-alert(arr.concat(arr1,arr2));    // [1,2,3,4,5,6,7,8,9] 数组连接
-alert(arr.reverse());            // [3,2,1] 数组倒序排列
-alert(arr3.sort());              // [15,22,22,31,47,'aa','aa','bz'] 数组默认排序
-alert(arr3.sort(function(a, b) { // 从小到大，return b-a是从大到小
-        return a - b;
-    }));
-```
-
-##### 清空数组
-```javascript
-let arr = [ 1, 2, 3, 4, 5 ];
-arr.length = 0;     // function 1
-arr.splice(0, 5);   // param1: index, param2: amount
-while(arr.length > 0){
-    arr.pop();
-}
-```
-
 ### 基本数据类型
     1. string
     2. number
@@ -182,6 +117,22 @@ var n = '2'*1;    // result: 2
 
 #### 循环
 
+##### 遍历(Traversal)
+有3种常用的遍历方法。
+
+```javascript
+for (let i = 0; i < Things.length; i++) { // 这里i不能用const
+    // statement..
+}
+/* for in循环中，不管是遍历什么，prop类型都是string */
+for (const prop in obj) { // 这里的变量prop可以用const
+    // statement..
+}
+while (condition) { // while是自定义循环条件，既是循环也是判断
+    // statement..
+}
+```
+
 ##### break
 ```javascript
 // 停止执行 result:0 1 2
@@ -201,6 +152,16 @@ for (let i = 0; i <= 5; i++) {
         continue;
     }
     alert(i);
+}
+```
+
+##### 9*9 乘法表
+```javascript
+for (let i = 1; i <= 9; i++) { // 外层循环被乘数1-9
+    for (let j = 1; j <= i; j++) { // 内层循环乘数，不大于被乘数
+        document.write(i + '*' + j + '=' + i * j + ' ');
+    }
+    document.write('<br />'); // 每行末位换行
 }
 ```
 
@@ -249,4 +210,147 @@ const oSeconds = oDate.getSeconds();  // 获取oDate的秒数
 const oMonth = oDate.getMonth() + 1;  // 获取月份为2月
 const oMonth = oDate.getDay();        // 星期n, 0-6, 0是星期天
 const oTime = oDate.getTime();        // 获取时间戳,1970.1.1 00:00至当前时间对象的毫秒数
+```
+
+### 数组(Array)
+
+#### 声明
+```javascript
+let arr=[ 1, 2, 3 ];
+let arr=new Array(1, 2, 3, 4);
+arr = Array.of(3,2,1);
+let arr=new Array(3);           // 长度为3的空数组
+```
+
+#### 数组操作
+
+##### 转换为字符串
+```javascript
+let arr = [ 1, 'a', 2, 'b' ];
+let arr2 = [ 1, 'a', 2, 'b' ];
+arr.join('');                 // arr: '1a2b'
+arr2.join('&');               // arr: '1&a&2&b'
+```
+
+##### 添加与删除
+```javascript
+let arr = [ 1, 2, 3 ];
+arr.push(5);             // arr: [ 1, 2, 3, 5 ] 从后面插入
+arr.unshift(0);          // arr: [ 0, 1, 2, 3, 5 ] 从前面插入
+arr.pop();               // arr: [ 0, 1, 2, 3 ] 从后面删除
+arr.shift();             // arr: [ 1, 2, 3 ] 从前面删除
+```
+
+##### 万能操作splice()
+>arr.splice(m, n, ...)
+
+- 从下标m开始，删除n个；
+- 若n大于剩余长度，也可以执行；
+- 若后面有元素则插入后面的元素；
+
+```javascript
+let arr1 = [ 1, 2 ]
+arr.splice(1, 2, 'a', 'b', 'c');    // arr: [1, a, b, c]
+```
+
+##### 排序和连接
+```javascript
+let arr = [ 1, 2, 3 ];
+let arr1 = [ 4, 5, 6 ];
+let arr2 = [ 7, 8, 9 ];
+let arr3 = [ 31, 22, 15, 47, 'aa', 'bz', 'aa', 22 ];
+alert(arr.concat(arr1,arr2));    // [1,2,3,4,5,6,7,8,9] 数组连接
+alert(arr.reverse());            // [3,2,1] 数组倒序排列
+alert(arr3.sort());              // [15,22,22,31,47,'aa','aa','bz'] 数组默认排序
+alert(arr3.sort(function(a, b) { // 从小到大，return b-a是从大到小
+        return a - b;
+    }));
+```
+
+##### 清空数组
+```javascript
+let arr = [ 1, 2, 3, 4, 5 ];
+arr.length = 0;     // function 1
+arr.splice(0, 5);   // param1: index, param2: amount
+while(arr.length > 0){
+    arr.pop();
+}
+```
+
+### json
+>json是一个对象，可以装任何东西，可以**嵌套**，json没有长度属性；<br />
+>json由键值对组成，每个数据称为**键(key)**，拥有一个相对应的**键值(value)**；<br />
+>键名类似于数组的下标，但数据类型是字符串，键值可以是任何形式；<br />
+>es6中，最后一组键值对可以加`,`;
+
+取得json的键值有两种方式：
+
+```javascript
+let json = { a:1, 'b':2, c:3 };
+alert(json.a);      // 1
+alert(json.b);      // 2
+alert(json['a']);   // 1
+alert(json[a]);     // error: not defined => 被当成数组了
+```
+
+##### json遍历
+因为json**没有长度属性**，所以通常的for循环是不能遍历的，这里常用for in方法
+
+```javascript
+const json = { a:1, 'b':2, c:3 };
+for (const prop in json) {          // for key in obj => key is string
+    console.log(prop + json[prop]);
+    alert(typeof prop);             // string
+}
+// console: a1
+// console: b2
+// console: c3
+```
+
+##### json嵌套
+```javascript
+const json = {
+    name: '小明',
+    job: '前端攻城狮',
+    addr: '杭州',
+    age: 20,
+    family: [
+        { name: '小花', age: 25, job: 'java' },
+        { name: '韩梅梅',
+          age: 28,
+          job: 'php',
+          family: [
+             { name: '小花', age: 25, job: 'java' },
+             { name: '韩梅梅', age: 28, job: 'php' }
+          ]
+        }
+    ]
+};
+```
+
+##### eval解析json
+```javascript
+const json='{ a:1, b:2 }';
+const json1=eval('(' + json + ')');
+/* eval解析字符串json时需要加括号，强制转换为对象 */
+```
+
+##### fn解析json
+```javascript
+const json='{ a:1, b:2 }';
+const fn=new Function('return' + json);
+const json1 = fn(); // 解析的json
+```
+
+### Math(本地对象)的常用方法
+```javascript
+Math.random();   // 获取0-1之间的随机小数不包括1
+Math.ceil();     // 向上取整
+Math.floor();    // 向下取整
+Math.round();    // 四舍五入
+Math.abs();      // 绝对值
+Math.sqrt();     // 开方
+Math.pow();      // n次方(幂)
+Math.max();      // 求最大值
+Math.min();      // 求最小值
 ```
