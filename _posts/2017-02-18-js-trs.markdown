@@ -1,0 +1,18 @@
+---
+layout:     post
+title:      "临时阻止transition"
+subtitle:   ""
+date:       2017-02-18 11:25:00
+author:     "AllocatorXy"
+comments:   true
+header-img: "img/post-bg-pot.jpg"
+header-mask: 0.3
+tags:
+    - 前端开发
+    - JavaScript
+    - CSS
+---
+    
+```js
+var b = true;
+```
