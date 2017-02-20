@@ -58,6 +58,7 @@ let a = `string1`;     // 使用``代替''包裹字符串
 let b = `string2`;
 let c = `${a}and${b}`; // string1andstring2
 ```
+<hr />
 
 ### 基本数据类型
     1. string
@@ -115,6 +116,7 @@ var z = 2+'';     // result: '2'
 var n = '2'*1;    // result: 2
 var n = '2b'++;    // result: NaN
 ```
+<hr />
 
 ### 流程控制语句
 
@@ -182,6 +184,7 @@ if(false){...} => condition || statement1;
 // 用'||'的情况下,第一个条件true,不检测第二个直接返回true;
 // 第一个条件false，会执行第二个条件检测。
 ```
+<hr />
 
 ### 作用域
 在函数内部声明变量，则变量是该函数的`局部变量`，在外部声明变量，则变量是`全局变量`；<br />
@@ -197,6 +200,7 @@ window.onload = function () {
     alert(i);   // 1
 };
 ```
+<hr />
 
 ### 日期对象Date()
 - 当日期对象声明时，会获取到当前时间，并且**不会**自动改变，所以这里用`const`比较好;
@@ -214,6 +218,7 @@ const oMonth = oDate.getMonth() + 1;  // 获取月份为2月
 const oMonth = oDate.getDay();        // 星期n, 0-6, 0是星期天
 const oTime = oDate.getTime();        // 获取时间戳,1970.1.1 00:00至当前时间对象的毫秒数
 ```
+<hr />
 
 ### 数组(Array)
 
@@ -279,6 +284,7 @@ while(arr.length > 0){
     arr.pop();
 }
 ```
+<hr />
 
 ### json
 >json是一个对象，可以装任何东西，可以**嵌套**，json没有长度属性；<br />
@@ -344,8 +350,9 @@ const json='{ a:1, b:2 }';
 const fn=new Function('return' + json);
 const json1 = fn(); // 解析的json
 ```
+<hr />
 
-### Math(本地对象)的常用方法
+### Math(本地对象)
 ```javascript
 Math.random();   // 获取0-1之间的随机小数不包括1
 Math.ceil();     // 向上取整
@@ -357,3 +364,94 @@ Math.pow();      // n次方(幂)
 Math.max();      // 求最大值
 Math.min();      // 求最小值
 ```
+<hr />
+
+### 严格模式
+'use strict'会产生一个script作用域，范围是当前js标签或文件内;
+
+- 解决了局部函数中this是window的bug;
+- 不用声明语句无法声明变量;
+- 不允许在非函数的代码块内声明函数;
+- 去除with;
+
+**ie9不兼容严格模式**
+<hr />
+
+### javaScript的组成
+- ECMAScript 核心解释器(ES5和ES6);
+- DOM 文档对象模型(Document Object Model) <= document对象;
+- BOM 浏览器对象模型(Browser Object Model) <= window对象;
+<hr />
+
+### DOM
+
+#### DOM节点类型
+- DOM中有两种节点类型，一种是元素节点ElementNode，即html标签；
+- 还有一种TextNode，文本节点指文档中的文本，每个标签前后都有两个文本节点；
+- `nodeType = 1` (element节点);`nodeType = 3` (text节点);
+- **文本节点空着也是存在的**;
+
+#### DOM节点获取
+
+##### 子节点获取
+在ie低版本中，`obj.childNodes`可直接获取对象的子元素节点;<br />
+但在其他情况下，此操作会获取对象的**<font color="red">全部</font>**子节点(文本节点和元素节点);
+
+若要获取元素子节点，有3种常用方法:
+- 用nodeType判断。nodeType = 1 (element节点);nodeType = 3 (text节点);
+- 用`obj.children`,这种方法只会选择元素节点(只会选择子代不会选择子代的后代),`obj.children`获取的节点是一个元素集合，`obj.children[0]` <= 可以这样操作;
+- 用Element系列指令操作:
+    + `obj.firstElementChild`;
+    + `obj.lastElementChild`;
+    + `obj.nextElementChild`;
+    + `obj.previousElementChild`;
+
+##### 兄弟节点获取
+- `obj.firstElementSibling`;
+- `obj.lastElementSibling`;
+- `obj.nextElementSibling`;
+- `obj.previousElementSibling`;
+
+>兄弟节点和子节点Element语句有**<font color="red">兼容性问题</font>**，以子节点为例，应该这样写：
+>`obj.firstElementChild || obj.firstChild`
+
+##### 父节点获取
+`obj.parentNode`
+
+##### 元素节点tag名获取
+获取node后可以用node获取tag名：
+```js
+const obj = document.getElementById('id');
+obj.tagName
+```
+
+##### offsetParent
+`obj.offsetParent`用来获取绝对定位的参考父级元素。
+**绝对定位会定位到有定位属性的节点为止，以之为参考父级元素进行定位**
+
+#### DOM节点操作
+
+##### 插入新元素
+首先，<br />
+`var childNode = document.createElement(tagName)`<br />
+此方法创建的元素会存储在内存中，并不显示在页面内。
+
+若要使创建的节点置于html中，需要用到`parentNode.appendChild(childNode)`将创建的节点置入指定父节点内。**`appendChild`方法会将结点插在父级末尾。**
+
+**值得一提的是，`append`方法会将`childNode`剪切进新的节点尾部，而不是复制，利用这一点可以快速移动节点。**
+
+若要将节点插入父节点指定部位，需要用到`insertBefore(childNode, existingNode)`,**这个方法会将`childNode`插入到existingNode之前。**
+
+##### 删除元素
+`parentNode.removeChild(childNode)`
+
+#####文档碎片
+**需要注意的是，在高版本的浏览器中，文档碎片是鸡肋**
+
+当遇到诸如，需要创建很多li时，若用循环一个个插入会造成性能低下，就像需要搬运很多小东西，却只一次搬运一件一样。<br />
+这时候，我们就可以用到文档碎片(DocumentFragment)了，它的作用相当于一个大的袋子，我们可以先把小东西都放进去，然后一次拎走，这样算法就优化很多了。
+
+- 首先我们需要创建文档碎片 `var oFrag = document.createDocumentFragment();`
+- 然后我们可以用**循环**将需要插入的元素放入碎片中，这里以正序插入为例：`oFrag.appendChild(ChildNode);`
+- 最后我们将碎片整体插入需要插入的节点内部`parentNode.appendChild(oFrag);`
+<hr />

@@ -47,7 +47,7 @@ tags:
 - 使用let和const声明的变量，**一开始就处于作用域内**；
 - 在变量被赋值之后才算完成变量的初始化；
 - 初始化完成的变量才可以被合法访问；
-<hr />
+
 这就很好理解**暂时性死区(Temporal Dead Zone 以下简称TDZ)**了：
 - let和const声明的变量，直到声明语句出现，位于**TDZ**中；
 - **<font color="red">以任何方式(包括typeof)访问处于TDZ中的变量，就会发生引用错误(ReferenceError)，而不再是undefined(已声明未定义)</font>**
@@ -62,7 +62,7 @@ tags:
 })();                                |      let i = 1;
                                      |  })();
 ```
-<hr />
+
 **<font color="red" style="font-size: 20px;" >需要注意的是</font>**，TDZ的效果虽然很像是let和const不存在变量提升，但实际并不是如此：
 
 ```js
@@ -107,7 +107,7 @@ for (let i = 0; i < arr.length; i++) {
 // alert: a b c
 ```
 
-因为`let`的特性，可以在块作用域中设置**闭包**了：
+因为`let`的特性，可以在块作用域中设置**闭包**了(~~虽然可以运行不过最好不要这样做~~**<font color="red">一定不要这样做</font>**)：
 
 ```js
 if (true) {
