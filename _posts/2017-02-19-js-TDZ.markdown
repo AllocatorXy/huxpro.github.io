@@ -76,7 +76,7 @@ fn();
 <hr />
 
 ##### let declaration
-- let自声明只在声明的**块级作用域**有效，并绑定该区域;
+- let自声明只在声明的**块级作用域**有效，并绑定该区域，且不再受外部影响;
 - 形如`for (let i...)`的循环在每次迭代时都为i**创建新的绑定**，包括`for in`, `for of`和`传统for循环`;
 
 `var`: 如果我想延迟循环`alert`出数组`arr`的每个值，直接用循环的话，会导致每次都弹出`undefined`，因为在定时器触发时，循环已经完毕，并且i是个全局变量，只保留了最后的值；<br />
@@ -95,7 +95,7 @@ for (var i = 0; i < arr.length; i++) {
 `let`: 但用let就可以简单实现效果，在每次迭代时，`i`都被创建了新的绑定在当次迭代的作用域；<br />
 
 相当于这个`for`每次迭代都会生成一个**<a href="https://allocatorxy.github.io/2017/02/15/js-closure/" target="_blank">闭包</a>**来捕获当次执行中`i`的值；<br />
-可以理解为：**<font color="red">每次迭代的`i`被固定成了常量(Constant)，`i`在循环完毕后被销毁了</font>**，这就很像c语言中的循环了；
+可以理解为：**每次迭代的`i`被固定成了常量(Constant)，`i`在循环完毕后被销毁了**，这就很像c语言中的循环了；
 
 ```js
 var arr = [ 'a', 'b', 'c' ];
@@ -107,7 +107,7 @@ for (let i = 0; i < arr.length; i++) {
 // alert: a b c
 ```
 
-因为`let`的特性，可以在块作用域中设置**闭包**了(~~虽然可以运行不过最好不要这样做~~**<font color="red">一定不要这样做</font>**)：
+因为`let`的特性，可以在块作用域中设置**闭包**了(虽然可以运行不过**最好不要**这样做)：
 
 ```js
 if (true) {
@@ -124,10 +124,25 @@ alert(n);       // ReferenceError: not defined
 ```
 <hr />
 
+###### for循环中的let
+>for循环还有一个特别之处，就是循环语句部分是一个父作用域，而循环体内部是一个单独的子作用域。下面代码输出了3次abc，**这表明函数内部的变量i和外部的变量i是分离的**。<br />
+<a href="http://es6.ruanyifeng.com/#docs/let">ECMAScript 6 入门-let和const命令 —— 阮一峰</a>
+
+```js
+for (let i = 0; i < 3; i++) {
+  let i = 'abc';
+  console.log(i);
+}
+// abc
+// abc
+// abc
+```
+<hr />
+
 ##### const declaration
 `const`命令用来声明**<font color="red">常变量(Constant Variable)</font>**<br />
 
-- 与`let`相同，`const`自声明只在声明的**块级作用域**有效，并绑定该区域;
+- 与`let`相同，`const`自声明只在声明的**块级作用域**有效，并绑定该区域，且不再受外部影响;
 - 如果试图改变const的地址，会报错`TypeError: Assignment to constant variable`;
 - 常变量(Constant Variable)，值可以被改变，但地址不能被改变;
 - const在声明时必须初始化，不然会报错`SyntaxError: Missing initializer in const declaration`;
