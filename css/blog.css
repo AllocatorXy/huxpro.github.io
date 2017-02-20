@@ -699,15 +699,6 @@ pre code {
     font-size: 20px;
   }
 }
-.post-preview {
-  transition: .1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-.post-preview:active {
-  transform: scale(1.05,1.05);
-}
-.post-preview * {
-  text-decoration: none;
-}
 .post-preview > a {
   color: #404040;
 }

@@ -1,10 +1,11 @@
 ---
 layout:     post
-title:      "js变量与提升"
-subtitle:   "如何正确使用let&const, var为什么不好使?"
-date:       2017-02-17 11:25:00
+title:      "let&const declaration"
+subtitle:   "如何正确使用let&const, 暂时性死区怎么理解？"
+date:       2017-02-19 11:43:00
 author:     "AllocatorXy"
 comments:   true
+catalog:    true
 header-img: "img/post-bg-pot.jpg"
 header-mask: 0.3
 tags:
@@ -12,95 +13,15 @@ tags:
     - JavaScript
 ---
 
-#### 作用域
-在ES6之前，JavaScript是**没有**块级作用域的，只有**<font color="red">全局作用域</font>**和**<font color="red">函数作用域</font>**；
-
-```javascript
-    var a = 1; // globally scoped
-function fn() {
-    var a = 1; // function block scoped
-}
-```
-<hr />
-
-#### 提升(Hoisting)
->在js中，声明变量和直接声明函数，会发生提升现象，声明会被提到js最高处;
-
-##### 变量提升
-这是一个很普通的函数，alert全局变量`str`；
-
-```javascript
-var str = 'Hello World'; 
-(function() { 
-    alert(str); // Hello World
-})();
-```
-<hr />
-
-如果在alert后面`var`一个同名的局部变量，居然不能正常alert了，这就看起来很诡异了，因为我们知道，js的代码是由上至下运行的，就算是在这个**<font color="red">函数作用域内部</font>**的局部变量`str`覆盖了全局变量，也应该是先弹出`Hello World`才符合常识；<br />
-就算是覆盖掉了，并且弹出这个局部变量，也应该是弹出`test`而不是`undefined`;
-
-```javascript
-var str = 'Hello World'; 
-(function() { 
-    alert(str); // undefined
-    var str = 'test';
-})();
-```
-<hr />
-
-这就牵扯到了js的**<font color="red">变量提升</font>**<br />
->在声明变量时，**<font color="red">声明</font>**会被**提升**到当前作用域的顶部，但**<font color="red">变量值</font>****不会被提升**。
-
-于是上面的代码**预编译(Precompile)**后成了这样：
-
-```javascript
-var str = 'Hello World'; 
-(function() { 
-    var str;    // 声明被提升到了函数作用域顶部，在域内覆盖了全局变量，但此时没有被赋值
-    alert(str); // undefined
-    str = 'test';
-})();
-```
-
-来个更直观的栗子：
-
-```js
-// 未编译                           // 预编译后
-(function() {                      (function() {
-    alert(a+b+c);      ===>            var a,b,c;
-    var a = 1;         ===>            alert(a+b+c); // undefined
-    var b = 2;         ===>            a = 1;    
-    var c = 3;                         b = 2;    
-})();                                  c = 3;
-                                   })();
-                                   
-```
-<hr />
-
-##### 函数提升
-- 类似于变量提升，js中函数声明也会<font color="red">提升(Hoisting)</font>;
-- 不同的是，函数提升会将**<font color="red">整个函数声明</font>**(包括函数体)提升到当前作用域的顶部，这可以使我们**先**使用函数，**后**声明函数。
-- **<font color="red">函数提升的优先级高于变量</font>**
-
-**但将声明的函数存储到一个变量中是<font color="red">不会</font>被提升的(变量提升不会提升变量值)**：
-
-```js
-fn();   // typeError: fn is not a function
-var fn = function fn() {
-    alert('msg');
-};
-```
-<hr />
-
 #### var & let & const
 **使用let和const需要用<font color="red">严格模式</font>**<br />
 
 - var只有全局作用域(只能依靠函数来限制作用域)，const&let**只有**块级作用域；
+- let或const声明的变量，会**绑定(Binding)**所在的块级作用域；
 - **let和const声明的全局变量不是全局对象的属性**，无法在window对象上直接获取这些变量，它们的作用域实际是所有函数的外层，一个不可见的块级作用域；
 - var可以重复声明**覆盖**同名变量，但let和const是**不能重复声明**的，会发生语法错误(SyntaxError)；
 - ~~var声明会提升(hoisting)，但const和let 是不会hoisting的；~~
-- const&let和var一样，**也会**发生变量提升；
+- const&let和var一样，也会发生**<a href="https://allocatorxy.github.io/2017/02/17/js-variable/" target="_blank">提升(hoisting)</a>**;
 - **var声明的变量可以在声明出现之前访问，但let和const是不能这样做的；**
 
 |  指令  |块级作用域|指令出现前访问|改变地址|重复声明|
@@ -119,7 +40,7 @@ var fn = function fn() {
 
 **这段话是在说什么呢？**<br />
 变量被创建时就已经在它们的文法环境下被实例化，但不会以任何方式被访问，直到这些变量被赋值。<br />
-一个变量的定义，是在对声明的赋值语句的求值后，才算初始化完成，而不是创建时。如果在let声明中没有赋初值，则let会被赋初始值undefined.
+一个变量的定义，是在对声明的赋值语句的求值后，才算初始化完成，而不是创建时。如果在`let`声明中没有赋初值，则`let`会被赋初始值`undefined`.
 
 由此我们可以得到几点信息：
 
@@ -142,7 +63,7 @@ var fn = function fn() {
                                      |  })();
 ```
 <hr />
-**<font color="red" style="font-size: 20px;" >需要注意的是</font>**，TDZ的效果虽然很像是let和const没有变量提升，但实际并不是如此：
+**<font color="red" style="font-size: 20px;" >需要注意的是</font>**，TDZ的效果虽然很像是let和const不存在变量提升，但实际并不是如此：
 
 ```js
 let a = 1;
@@ -154,10 +75,59 @@ fn();
 ```
 <hr />
 
-##### `const`
-const命令用来声明**<font color="red">常变量(Constant Variable)</font>**<br />
+##### let declaration
+- let自声明只在声明的**块级作用域**有效，并绑定该区域;
+- 形如`for (let i...)`的循环在每次迭代时都为i**创建新的绑定**，包括`for in`, `for of`和`传统for循环`;
 
-- 与let相同，const自声明只在声明的**块级作用域**有效;
+`var`: 如果我想延迟循环`alert`出数组`arr`的每个值，直接用循环的话，会导致每次都弹出`undefined`，因为在定时器触发时，循环已经完毕，并且i是个全局变量，只保留了最后的值；<br />
+如果我想要用`var`实现效果，还需要某些辅助方法；
+
+```js
+var arr = [ 'a', 'b', 'c' ];
+for (var i = 0; i < arr.length; i++) {
+    setTimeout(function() {
+        alert(arr[i]);
+        }, i);
+}
+// alert: undefined undefined undefined
+```
+
+`let`: 但用let就可以简单实现效果，在每次迭代时，`i`都被创建了新的绑定在当次迭代的作用域；<br />
+
+相当于这个`for`每次迭代都会生成一个**<a href="https://allocatorxy.github.io/2017/02/15/js-closure/" target="_blank">闭包</a>**来捕获当次执行中`i`的值；<br />
+可以理解为：**<font color="red">每次迭代的`i`被固定成了常量(Constant)，`i`在循环完毕后被销毁了</font>**，这就很像c语言中的循环了；
+
+```js
+var arr = [ 'a', 'b', 'c' ];
+for (let i = 0; i < arr.length; i++) {
+    setTimeout(function() {
+        alert(arr[i]);
+        }, i);
+}
+// alert: a b c
+```
+
+因为`let`的特性，可以在块作用域中设置**闭包**了：
+
+```js
+if (true) {
+    let n = 0;
+    function aaa() {
+        n++;
+        return n;
+    }
+}
+alert(aaa());   // 1
+alert(aaa());   // 2
+alert(aaa());   // 3
+alert(n);       // ReferenceError: not defined
+```
+<hr />
+
+##### const declaration
+`const`命令用来声明**<font color="red">常变量(Constant Variable)</font>**<br />
+
+- 与`let`相同，`const`自声明只在声明的**块级作用域**有效，并绑定该区域;
 - 如果试图改变const的地址，会报错`TypeError: Assignment to constant variable`;
 - 常变量(Constant Variable)，值可以被改变，但地址不能被改变;
 - const在声明时必须初始化，不然会报错`SyntaxError: Missing initializer in const declaration`;
@@ -168,7 +138,7 @@ num = 2; // TypeError: Assignment to constant variable.
 const a; // SyntaxError: Missing initializer in const declaration
 
 for (const prop in obj) { // available
-  // statement..
+  alert(typeof prop);     // string
 }
 for (const i = 0; i < n; i++) { // TypeError: Assignment to constant variable.
   // statement..

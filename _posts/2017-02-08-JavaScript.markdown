@@ -41,6 +41,8 @@ str2.lastIndexOf('a') // 2
 /* 以某个符号拆分成数组 */
 let str='1,2,3,4,5,6';
 str.split(',');       // [1,2,3,4,5,6], 可以用正则匹配
+
+obj.toString(); // 强制转换为字符串
 ```
 
 ##### userAgent
@@ -59,9 +61,9 @@ let c = `${a}and${b}`; // string1andstring2
 
 ### 基本数据类型
     1. string
-    2. number
+    2. number       // NaN属于number
     3. boolean
-    4. undefined
+    4. undefined    // undefined == null => true
     5. function     // 官方文档里没有定义function为数据类型，但typeof可以弹出
     6. object       // 可分为元素,array,null
     7. global       // es6顶层对象
@@ -111,6 +113,7 @@ var y = '2'+2;    // result: '22' *加号就当连字符处理了*
 /* 利用隐式转换可以便捷转换 */
 var z = 2+'';     // result: '2'
 var n = '2'*1;    // result: 2
+var n = '2b'++;    // result: NaN
 ```
 
 ### 流程控制语句

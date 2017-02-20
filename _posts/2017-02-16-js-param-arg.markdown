@@ -5,6 +5,7 @@ subtitle:   "什么是形参和实参，传值和传址两种参数传递有何�
 date:       2017-02-16 1:04:00
 author:     "AllocatorXy"
 comments:   true
+catalog:    true
 header-img: "img/post-bg-js-module.jpg"
 header-mask: 0.3
 tags:
