@@ -15,6 +15,7 @@ tags:
 ### 准备工作
 sublime最让人蛋疼的一点就是：**<font color="red" style="font-size: 18px;">没·有·语·法·错·误·提·示·功·能!</font>**<br />
 所以我们需要通过配置插件来解决，但插件**坑挺多的**，这篇文章旨在让我们更舒服地使用SublimeLinter的校验功能。
+<hr />
 
 ##### node.js
 SublimeLinter依赖于node.js, 所以最开始我们需要安装**<a href="https://nodejs.org/en/">node.js</a>**;
@@ -113,6 +114,7 @@ sublimeLinter暂时还不能用，需要配置一下，依次打开:<br />
 `SublimeLinter`只是一个对错误代码进行提示的插件，我们还需要一些**特定语法**校验的插件来告诉`SublimeLinter`我们需要在哪些语言环境下，检查哪些错误。<br />
 **<font color="red">每个</font>**语法校验插件的配置都分为**<font color="red">两部分</font>**，分别为`sublime`端和`node`端；<br />
 对于每个语法校验插件，只有`sublime`端和`node`端**都**配置完毕才可以设置在sublime集成相应的语法校验。
+<hr />
 
 #### HTML语法校验
 
@@ -140,7 +142,7 @@ html语法校验也不止有一个插件，这里我选用`SublimeLinter-csslint
 1. 在sublime中`ctrl+shift+p`打开命令模式;
 2. 执行`Package Control: Install Package`;
 3. 找到`SublimeLinter-csslint`回车或点击安装;
-<img src="/img/in-post/sublimeLinter/htmllinter.png" alt="" />
+<img src="/img/in-post/sublimeLinter/csslinter.png" alt="" />
 
 ##### CSS语法校验-Node端
 1. 打开`命令行`工具，windows按`win+r`或点击开始菜单，点击运行，输入`cmd`并回车打开命令行。
@@ -186,16 +188,16 @@ html语法校验也不止有一个插件，这里我选用`SublimeLinter-csslint
 这里**括号里**显示的就是**与这个错误相关的设置**在设置文件`.eslintrc.js`中的选项，而括号外显示的就是具体错误原因，这里因为我设置的代码风格是字符串用单引号，所以会提示我规范我的代码；
 
 如果我想修改有关于校验规则怎么办呢？以上面这个`quotes`为例：<br />
-- 打开文件：`c://users/[这里改成你的用户名]/.eslintrc.js`;
-- 搜索`quotes`;
+1. 打开文件：`c://users/[这里改成你的用户名]/.eslintrc.js`;
+2. 搜索`quotes`;
 <img src="/img/in-post/sublimeLinter/eset5.png" alt="" />
-- 找到对应选项，可以看到里面的设置，error是提示等级，ESlint有三种提示等级(error,warn,off)，分别对应2,1,0三个数字，提示等级可以设数字，也可以设英文;
+3. 找到对应选项，可以看到里面的设置，error是提示等级，ESlint有三种提示等级(error,warn,off)，分别对应2,1,0三个数字，提示等级可以设数字，也可以设英文;
 
 >"off" or 0 - turn the rule off <br />
 >"warn" or 1 - turn the rule on as a warning (doesn’t affect exit code) <br />
 >"error" or 2 - turn the rule on as an error (exit code is 1 when triggered)
 
-js中可以用注释设置**临时规则**，也可以为**不同**的工作目录指定**不同**的配置文件;
+`Eslint`在js中可以用注释设置**临时规则**，也可以为**不同**的工作目录指定**不同**的配置文件;
 
 ```js
 /* eslint quotes: ["error", "double"], curly: 2 */
