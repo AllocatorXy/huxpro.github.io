@@ -18,7 +18,7 @@ sublime最让人蛋疼的一点就是：**<font color="red" style="font-size: 18
 <hr />
 
 ##### node.js
-SublimeLinter依赖于node.js, 所以最开始我们需要安装**<a href="https://nodejs.org/en/">node.js</a>**;
+SublimeLinter依赖于node.js, 所以最开始我们需要安装**<a target="_blank" href="https://nodejs.org/en/">node.js</a>**;
 
 ##### SublimeLinter
 首先要确认sublime有没有安装`package control`, 如果没有安装：在sublime中按``ctrl+` ``打开控制台，然后输入下面这段代码后按`enter`, 安装package control.
@@ -150,7 +150,7 @@ html语法校验也不止有一个插件，这里我选用`SublimeLinter-csslint
 **这里如果不想全局安装，可以去掉参数`-g`**
 
 ##### CSS语法校验设置
-这个东西没法配置全局设置，全局设置是固定的，如果想添加或修改某些规则，只能设定某个文件或通过`.csslintrc`文件改变当前工作目录的规则，如果想折腾可以戳**<a href="https://packagecontrol.io/packages/SublimeLinter-csslint">这里</a>**看看文档;
+这个东西没法配置全局设置，全局设置是固定的，如果想添加或修改某些规则，只能设定某个文件或通过`.csslintrc`文件改变当前工作目录的规则，如果想折腾可以戳**<a target="_blank" href="https://packagecontrol.io/packages/SublimeLinter-csslint">这里</a>**看看文档;
 <hr />
 
 #### JS语法校验
@@ -179,7 +179,7 @@ html语法校验也不止有一个插件，这里我选用`SublimeLinter-csslint
 4. 接下来它会问几个使用习惯相关的问题，之后就会在`c://users/[你的用户名]`目录下生成一个全局的配置文件`.eslintrc.js`
 <img src="/img/in-post/sublimeLinter/eset2.png" alt="" />
 
-<font color="red">ESlint是一个插件式的代码检验工具，默认可以检测的有:javaScript, react, jquery, 可以到<a href="https://www.npmjs.com/">NPM</a>下载其他插件，以适配各种代码，这里就不多说了。</font>
+<font color="red">ESlint是一个插件式的代码检验工具，默认可以检测的有:javaScript, react, jquery, 可以到<a target="_blank" href="https://www.npmjs.com/">NPM</a>下载其他插件，以适配各种代码，这里就不多说了。</font>
 
 **到这里其实ESlint已经可以用了**，但可能和你平常写代码的习惯不太符合，我们打开一个js文件：
 <img src="/img/in-post/sublimeLinter/eset3.png" alt="" />
@@ -203,4 +203,4 @@ html语法校验也不止有一个插件，这里我选用`SublimeLinter-csslint
 /* eslint quotes: ["error", "double"], curly: 2 */
 ```
 
-详细设置请阅读**<a href="http://eslint.org/docs/user-guide/configuring">官方文档</a>**
+详细设置请阅读**<a target="_blank" href="http://eslint.org/docs/user-guide/configuring">官方文档</a>**
