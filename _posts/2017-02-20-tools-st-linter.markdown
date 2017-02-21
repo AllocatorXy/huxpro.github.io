@@ -50,11 +50,11 @@ sublimeLinter暂时还不能用，需要配置一下，依次打开:<br />
         "linters": { // 这里是各个校验模块的设置区域
             "csslint": {
                 "@disable": false, // 如果disable设为true，则禁用这个模块
-                "args": [],
-                "errors": "",
-                "excludes": [],
-                "ignore": "",
-                "warnings": ""
+                "args": [],        // 参数，这里填写npm中的指令
+                "errors": "",      // 等级为error的规则
+                "excludes": [],    // 包括哪些文件
+                "ignore": "",      // 等级为ignore的规则
+                "warnings": ""     // 等级为warning的规则
             },
             "eslint": {
                 "@disable": false,
@@ -150,8 +150,18 @@ html语法校验也不止有一个插件，这里我选用`SublimeLinter-csslint
 **这里如果不想全局安装，可以去掉参数`-g`**
 
 ##### CSS语法校验设置
-这个东西没法配置全局设置，全局设置是固定的，如果想添加或修改某些规则，只能设定某个文件或通过`.csslintrc`文件改变当前工作目录的规则，如果想折腾可以戳**<a target="_blank" href="https://packagecontrol.io/packages/SublimeLinter-csslint">这里</a>**看看文档;
-<hr />
+可以在`SublimeLinter`的`user-settings`中设置规则的提示等级;
+
+```js
+"csslint": {
+    "@disable": false, // 如果disable设为true，则禁用这个模块
+    "args": [],        // 参数，这里填写npm中的指令
+    "errors": "",      // 等级为error的规则
+    "excludes": [],    // 包括哪些文件
+    "ignore": "",      // 等级为ignore的规则
+    "warnings": ""     // 等级为warning的规则
+}
+```
 
 #### JS语法校验
 以前用`SublimeLinter-jshint`作为js的校验工具，但这个东西非常的不灵活，对框架的支持也不算很优秀，整体来讲感觉不如IDE的语法校验。<br />
