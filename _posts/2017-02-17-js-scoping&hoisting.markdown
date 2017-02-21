@@ -6,7 +6,7 @@ date:       2017-02-17 11:25:00
 author:     "AllocatorXy"
 comments:   true
 catalog:    true
-header-img: "img/post-bg-pot.jpg"
+header-img: "img/post-bg-tree.jpg"
 header-mask: 0.3
 tags:
     - 前端开发

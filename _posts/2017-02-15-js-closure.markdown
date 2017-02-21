@@ -5,7 +5,7 @@ subtitle:   "闭包是什么？是用来做什么的？"
 date:       2017-02-15 16:50:00
 author:     "AllocatorXy"
 comments:   true
-header-img: "img/post-bg-js-module.jpg"
+header-img: "img/post-bg-js-closure.jpg"
 header-mask: 0.3
 tags:
     - 前端开发
