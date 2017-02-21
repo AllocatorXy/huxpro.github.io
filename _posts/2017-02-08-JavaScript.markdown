@@ -455,3 +455,27 @@ obj.tagName
 - 然后我们可以用**循环**将需要插入的元素放入碎片中，这里以正序插入为例：`oFrag.appendChild(ChildNode);`
 - 最后我们将碎片整体插入需要插入的节点内部`parentNode.appendChild(oFrag);`
 <hr />
+
+### 批量修改css样式
+在不封装任何方法的情况下，js本就是可以对css样式批量修改的，但都不好使，**仅作了解**。
+
+```js
+with(obj.style){ // 性能低下
+    styleName = value;
+    styleName = value;
+}
+
+obj.style.cssText='width:200px;height:200px;'; // 会将当前行间样式清除后再添加
+```
+<hr />
+
+### 异常捕获
+```js
+    try{
+        // code try running
+    }catch(e){
+        // if error
+        // e: error msg
+    }
+```
+<hr />
