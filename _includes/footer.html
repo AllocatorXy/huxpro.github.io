@@ -152,7 +152,7 @@
     if($('#tag_cloud').length !== 0){
         async('{{ "/js/jquery.tagcloud.js" | prepend: site.baseurl }}',function(){
             $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
+                // size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
             };
             $('#tag_cloud a').tagcloud();
@@ -160,44 +160,28 @@
     }
 </script>
 
-<!-- btnToTop -->
-<!-- <script>
-    // toTop
-    $(document).ready(function() {
-        $(function() {
-            $(window).scroll(function() {
-                const s = $(window).scrollTop();
-                s >= 500 ? $('#btnToTop').show() :
-                           $('#btnToTop').stop().fadeOut(200);
-            });
-            $('#btnToTop').click(function() {
-                $('html, body').animate({ scrollTop: 0 }, 700);
-            });
-        });
-    });
-</script> -->
 <!-- animatescroll.min.js -->
 <script>
     async('{{ "/js/animatescroll.min.js" | prepend: site.baseurl }}',function(){
         $(window).scroll(function() {
             const s = $(window).scrollTop();
-            s >= 500 ? $('#btnToTop').show() :
-                       $('#btnToTop').stop().fadeOut(200);
+            s >= 500 ? $('#btnToTop').stop(true).fadeIn(200) :
+                       $('#btnToTop').fadeOut(200);
         });
         $('#btnToTop').click(function() {
-            $('html, body').animatescroll({scrollSpeed:1200, easing:'easeInOutCubic'});
+            $('html, body').animatescroll({scrollSpeed:1000, easing:'easeInOutCubic'});
         });
     });
 </script>
 
 
-<!--fastClick.js -->
+<!--fastclick.min.js -->
 <script>
-    async("/js/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        var $btnT = document.querySelector('#btnToTop');
+    async('/js/fastclick.min.js', function() {
+        var $btnT = document.querySelector('#btnToTop'),
+            $nav = document.querySelector('nav');
         FastClick.attach($btnT);
-        if($nav) {FastClick.attach($nav);}
+        $nav && FastClick.attach($nav);
     });
 </script>
 

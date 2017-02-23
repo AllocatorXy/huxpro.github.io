@@ -425,9 +425,21 @@ const obj = document.getElementById('id');
 obj.tagName
 ```
 
-##### offsetParent
-`obj.offsetParent`用来获取绝对定位的参考父级元素。
-**绝对定位会定位到有定位属性的节点为止，以之为参考父级元素进行定位**
+##### offset
+- `obj.offsetParent` 用来获取定位的参考父级元素;
+- `obj.offsetLeft` 获取相对于定位父级的left;
+- `obj.offsetHeight` 物体盒子模型高度;
+- `obj.scrollHeight` 内容高度;
+    + **当内容高度小于盒子，取盒子高度，否则取内容高度**;
+
+##### 获取物体绝对位置
+```js
+obj.getBoundingClientRect(); // 获取绝对位置;
+                        // .left 左边距离页面左边的距离
+                        // .top  上边距离页面上边的距离
+                        // .right  右边距离页面左边的距离
+                        // .bottom  下边距离页面上边的距离
+```
 
 #### DOM节点操作
 
@@ -445,6 +457,10 @@ obj.tagName
 ##### 删除元素
 `parentNode.removeChild(childNode)`
 
+##### 复制元素
+- `obj.cloneNode()` <= 返回复制的元素;
+- `obj.cloneNode(true)` <= 返回复制的元素包括该元素的子元素;
+
 #####文档碎片
 **需要注意的是，在高版本的浏览器中，文档碎片是鸡肋**
 
@@ -455,6 +471,11 @@ obj.tagName
 - 然后我们可以用**循环**将需要插入的元素放入碎片中，这里以正序插入为例：`oFrag.appendChild(ChildNode);`
 - 最后我们将碎片整体插入需要插入的节点内部`parentNode.appendChild(oFrag);`
 <hr />
+
+##### 操作属性
+- 获取: `obj.getAttribute('attrName')`; 
+- 设置: `obj.setAttribute('attrName')`; 
+- 删除: `obj.removeAttribute('attrName')`; 
 
 ### 批量修改css样式
 在不封装任何方法的情况下，js本就是可以对css样式批量修改的，但都不好使，**仅作了解**。
@@ -479,3 +500,31 @@ obj.style.cssText='width:200px;height:200px;'; // 会将当前行间样式清除
     }
 ```
 <hr />
+
+### scrollTop兼容
+```js
+const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+```
+
+### innerHTML bug
+```html
+<body>
+    <div>
+        <h2>11111111</h2>
+    </div>
+    <input type="button" value="press" style="position: absolute; left: 50px; top: 50px;" />
+</body>
+<script type="text/javascript">
+    window.onload = function() {
+        const oDiv = document.querySelector('div');
+        document.querySelector('h2').onclick = function() {
+            alert('msg');
+        };
+        document.querySelector('input').onclick = function() {
+            oDiv.innerHTML += '<h3>222222</h3>';
+            // 对oDiv.innerHTML重新赋值会导致加在oDiv.innerHTML上的事件失效
+        };
+    };
+</script>
+```
+

@@ -189,7 +189,7 @@ html语法校验也不止有一个插件，这里我选用`SublimeLinter-csslint
 4. 接下来它会问几个使用习惯相关的问题，之后就会在`c://users/[你的用户名]`目录下生成一个全局的配置文件`.eslintrc.js`
 <img src="/img/in-post/sublimeLinter/eset2.png" alt="" />
 
-<font color="red">ESlint是一个插件式的代码检验工具，默认可以检测的有:javaScript, react, jquery, 可以到<a target="_blank" href="https://www.npmjs.com/">NPM</a>下载其他插件，以适配各种代码，这里就不多说了。</font>
+<font color="red">ESlint是一个插件式的代码检验工具，默认可以检测的有:javaScript, react, jquery等, 可以到<a target="_blank" href="https://www.npmjs.com/">NPM</a>下载其他插件，以适配各种代码，这里就不多说了。</font>
 
 **到这里其实ESlint已经可以用了**，但可能和你平常写代码的习惯不太符合，我们打开一个js文件：
 <img src="/img/in-post/sublimeLinter/eset3.png" alt="" />
